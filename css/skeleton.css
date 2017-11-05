@@ -419,12 +419,12 @@ there.
 
 #sidebar{
     background-color: white;
-    width: 30%;
-    height: 100vh;
+    width: 40%;
+    height: 1000px;
     position: absolute;
 }
 
 iframe {
     width: 100%;
-    height: 803px;
+    height: 1000px;
 }
