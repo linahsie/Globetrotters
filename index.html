@@ -29,12 +29,29 @@
 </head>
 <body>
 
+
+<script>
+    function w3_open() {
+        document.getElementById("sidebar").style.display = "block";
+    }
+    function w3_close() {
+        document.getElementById("sidebar").style.display = "none";
+    }
+</script>
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div id="sidebar">
-        hello
-    </div>
-    <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCxNm5FttEhJK3b_LmCnY9NaqT3q2wz2fk&q=Space+Needle,Seattle+WA" allowfullscreen />
+
+  <div>
+    <button onclick="w3_open()">☰</button>
+  </div>
+
+  <div id="sidebar" style="display:none">
+    hello
+    <button onclick="w3_close()">Close &times;</button>
+  </div>
+
+  <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCxNm5FttEhJK3b_LmCnY9NaqT3q2wz2fk&q=Space+Needle,Seattle+WA" allowfullscreen />
   <!--  <div class="container">
     <div class="row">
       <div class="one-half column" style="margin-top: 25%">
@@ -46,5 +63,6 @@
 -->
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
 </body>
 </html>
