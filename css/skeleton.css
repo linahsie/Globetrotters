@@ -422,6 +422,7 @@ there.
     width: 40%;
     height: 1000px;
     position: absolute;
+    padding: 15px;
 }
 
 iframe {
