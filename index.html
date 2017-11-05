@@ -30,6 +30,7 @@
 <body>
 
 
+
 <script>
     function w3_open() {
         document.getElementById("sidebar").style.display = "block";
@@ -47,8 +48,10 @@
   </div>
 
   <div id="sidebar" style="display:none">
-    hello
     <button onclick="w3_close()">Close &times;</button>
+    <form>
+      <input type="text" name="search" placeholder="Search..">
+    </form>
   </div>
 
   <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCxNm5FttEhJK3b_LmCnY9NaqT3q2wz2fk&q=Space+Needle,Seattle+WA" allowfullscreen />
