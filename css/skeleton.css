@@ -419,7 +419,7 @@ there.
 @media (min-width: 1200px) {}
 
 #sidebar{
-    background-color: white;
+    background-color: blue;
     width: 40%;
     height: 1000px;
     position: absolute;
@@ -428,4 +428,13 @@ there.
 iframe {
     width: 100%;
     height: 1000px;
+}
+
+#view-sidebar {
+    position: absolute;
+    width: 50px;
+    right: 0px;
+    height: 1000px;
+    text-align: center;
+    padding-top: 60px;
 }
