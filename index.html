@@ -28,14 +28,31 @@
 <script type="text/javascript" src="javascript/app.js"></script>
 
   <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->    
-    <div>
-        <button onclick="open_sidebar()" style="display:inline">☰</button>
-    </div>
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <button id="sidebar_button" onclick="open_sidebar()" style="display:inline">☰</button>
 
-    <div id="sidebar" style="display:none">
-        <input id="search" class="controls" type="text" placeholder="Search..">
-        <button onclick="close_sidebar()">Close &times;</button>
+    <div>
+        <div id="sidebar" style="display:none">
+            <div id="search_bar">
+                <input id="search" class="controls" type="text" placeholder="Search.." onchange="updateView(this.value)">
+            </div>
+            <div id="instagram_logo">
+
+            </div>
+            <div id="location_summary">
+                <h3 id="location">Initial Location(will change after search)</h3>
+            </div>
+            <div id="friend_summary">
+                <h3>Friends</h3>
+            </div>
+            <div id="categories">
+                <h3>Categories</h3>
+            </div>
+            <div id="post_content">
+                <h3>Posts</h3>
+            </div>
+        </div>
+
     </div>
     
     <div id="view-sidebar">
@@ -44,9 +61,10 @@
         <img src="https://png.icons8.com/google/color/40/000000">
         <img src="https://png.icons8.com/star-filled/color/40/000000">
     </div>
-    
-    <div id="map"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU2_MvYmzRaTirG2mIsGTTT4Mz-E_cIA&libraries=places&callback=initAutocomplete" async defer></script>  
+
+    <div id="map">
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU2_MvYmzRaTirG2mIsGTTT4Mz-E_cIA&libraries=places&callback=initAutocomplete" async defer></script>
+    </div>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 

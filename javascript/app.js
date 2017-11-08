@@ -1,8 +1,20 @@
 function open_sidebar() {
+    document.getElementById("map").style.marginLeft = "40%";
+    document.getElementById("map").style.width = "60%";
     document.getElementById("sidebar").style.display = "block";
+    document.getElementById("sidebar_button").style.left = "40%";
+    document.getElementById("sidebar_button").onclick = close_sidebar;
 }
 function close_sidebar() {
+    document.getElementById("map").style.marginLeft = "0";
+    document.getElementById("map").style.width = "100%";
     document.getElementById("sidebar").style.display = "none";
+    document.getElementById("sidebar_button").style.left = "0";
+    document.getElementById("sidebar_button").onclick = open_sidebar;
+}
+
+function updateView(value){
+    document.getElementById("location").innerHTML = value;
 }
 
 function initAutocomplete() {
@@ -28,7 +40,7 @@ function initAutocomplete() {
     searchBox.addListener('places_changed', function() {
         var places = searchBox.getPlaces();
 
-        if (places.length == 0) {
+        if (places.length === 0) {
             return;
         }
 
