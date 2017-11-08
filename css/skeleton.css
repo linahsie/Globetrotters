@@ -423,7 +423,7 @@ there.
 @media (min-width: 1200px) {}
 
 #sidebar{
-    background-color: hotpink;
+    background-color: purple;
     width: 40%;
     height: 100%;
     position: absolute;
