@@ -183,7 +183,7 @@ input[type="button"] {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: white;
   border-radius: 4px;
   border: 1px solid #bbb;
   cursor: pointer;
@@ -236,8 +236,11 @@ input[type="password"],
 textarea,
 select {
   height: 38px;
-  width: 100%;
-  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  width: 94%;
+  float: left;
+  display: block;
+  margin: 20px 3% 20px 3%;
+  padding: 20px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
   border: 1px solid #D1D1D1;
   border-radius: 4px;
@@ -420,7 +423,7 @@ there.
 @media (min-width: 1200px) {}
 
 #sidebar{
-    background-color: blue;
+    background-color: hotpink;
     width: 40%;
     height: 100%;
     position: absolute;
@@ -441,4 +444,49 @@ there.
     height: 100%;
     width: 100%;
     z-index: -1;
+}
+
+#search_bar{
+
+}
+
+#sidebar_button{
+    position: absolute;
+    left: 0px;
+    z-index: 10;
+}
+
+#instagram_logo{
+    height: 8%;
+    width: 100%;
+    float: left;
+}
+
+#location_summary{
+  background-color: white;
+  height: 15%;
+  width: 100%;
+  float: left;
+}
+
+#friend_summary{
+  background-color: white;
+  height: 15%;
+  width: 100%;
+  float: left;
+}
+
+#categories{
+  background-color: white;
+  height: 15%;
+  width: 100%;
+  float: left;
+}
+
+
+#post_content{
+  background-color: white;
+  height: auto;
+  width: 100%;
+  float: left;
 }
