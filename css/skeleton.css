@@ -434,6 +434,8 @@ there.
     height: 100%;
     position: absolute;
     padding: 0 10px;
+    display:none;
+    overflow: scroll;
 }
 
 #view-sidebar {
