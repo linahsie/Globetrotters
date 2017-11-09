@@ -9,15 +9,6 @@ var icons = {
     }
 };
 
-var feed = new Instafeed({
-    get: 'user',
-    tagName: 'awesome',
-    accessToken: '4294116483.5c129f5.822305c4f7594a95923c2907edb68c98',
-    userId:'4294116483',
-    template: '<div id="all"> <div id="content"> <div class="container"> <div class="col-md-3 col-sm-3"> <div class="product"> <div class="img-container"> <div class="front"> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a> </div> </div> <a href="detail.html" class="invisible"> <img src="{{image}}" alt="" class="img-responsive"> </a> <div class="text"> <h3>Fur coat with very but very very long name</a></h3> </div> <!-- /.text --> </div> <!-- /.product --> </div> </div> <!-- /.container --> </div> <!-- /#content --> </div> <!-- /#all -->'
-});
-feed.run();
-
 function open_sidebar() {
     document.getElementById("map").style.marginLeft = "40%";
     document.getElementById("map").style.width = "60%";

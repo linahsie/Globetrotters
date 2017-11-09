@@ -17,7 +17,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
-    <link href="css/style.default.css" rel="stylesheet" id="theme-stylesheet">
     <!-- Bootstrap and Font Awesome css -->
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +35,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <button id="sidebar_button" onclick="open_sidebar()" style="display:inline">☰</button>
 
-    <div id="sidebar" style="display:none">
+    <div id="sidebar" style="display:none; overflow: scroll;">
         <div id="search_bar">
             <input id="search" class="controls" type="text" placeholder="Search.." onchange="updateView(this.value)">
         </div>
@@ -44,8 +43,9 @@
         <img src="assets/instagram_logo.png" id="instagram_logo">
         
         <div id="location_summary">
-            <h3>Initial Location(will change after search)</h3>
+            <h3 id="location">Current Location</h3>
         </div>
+
         <div id="friend_summary">
             <h3>Friends</h3>
         </div>
@@ -57,7 +57,7 @@
             <img src="assets/categories/ferris-wheel.png">
             <img src="assets/categories/oak-tree.png">
         </div>
-        <div id="post_content">
+        <div id="post_content" style="overflow: scroll;">
             <h3>Posts</h3>
             <div id="instafeed"> </div>
             <script type="text/javascript">
