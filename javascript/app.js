@@ -1,3 +1,14 @@
+// Variables
+var markers = [];
+var map;
+
+var icon_base = 'assets/categories/'
+var icons = {
+    bar: {
+        icon: icon_base + 'bar.png'
+    }
+};
+
 function open_sidebar() {
     document.getElementById("map").style.marginLeft = "40%";
     document.getElementById("map").style.width = "60%";
@@ -17,10 +28,9 @@ function updateView(value){
     document.getElementById("location").innerHTML = value;
 }
 
-var markers = [];
-
+// Map and Search box
 function initAutocomplete() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -33.8688, lng: 151.2195},
         zoom: 13,
         mapTypeId: 'roadmap'
@@ -34,8 +44,13 @@ function initAutocomplete() {
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
+        google.maps.event.trigger(map, 'resize');
     });
-
+    
+    map.addListener('center_changed', function() {
+        markers.forEach(removeMarkers);
+        addMarker(map.getCenter());
+    });
     
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
@@ -47,10 +62,7 @@ function initAutocomplete() {
         }
 
         // Clear out the old markers.
-        markers.forEach(function(marker) {
-            marker.setMap(null);
-        });
-        markers = [];
+        markers.forEach(removeMarkers);
 
         // For each place, get the icon, name and location.
         var bounds = new google.maps.LatLngBounds();
@@ -86,6 +98,16 @@ function initAutocomplete() {
     });
 }
 
+// Add marker (pin) based on location (right now just puts it in center of map)
 function addMarker(location) {
+    markers.push(new google.maps.Marker({
+        map: map,
+        position: map.getCenter(),
+        icon: icons.bar.icon
+    }));
+}
     
+// Remove all markers
+function removeMarkers(marker) {
+    marker.setMap(null);
 }
