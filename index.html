@@ -17,15 +17,20 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+    <link href="css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+    <!-- Bootstrap and Font Awesome css -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
 <body>
 
 <script type="text/javascript" src="javascript/app.js"></script>
+<script type="text/javascript" src="javascript/instafeed.min.js"></script>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -54,6 +59,17 @@
         </div>
         <div id="post_content">
             <h3>Posts</h3>
+            <div id="instafeed"> </div>
+            <script type="text/javascript">
+                var feed = new Instafeed({
+                    get: 'user',
+                    tagName: 'awesome',
+                    accessToken: '4294116483.5c129f5.822305c4f7594a95923c2907edb68c98',
+                    userId:'4294116483',
+                    template: '<div id="all"> <div id="content"> <div class="container"> <div class="col-md-3 col-sm-3"> <div class="product"> <div class="img-container"> <div class="front"> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a> </div> </div> <a href="detail.html" class="invisible"> <img src="{{image}}" alt="" class="img-responsive"> </a> <div class="text"> <h3>{{caption}}</a></h3> </div> <!-- /.text --> </div> <!-- /.product --> </div> </div> <!-- /.container --> </div> <!-- /#content --> </div> <!-- /#all -->'
+                });
+                feed.run();
+            </script>
         </div>
     </div>
 
