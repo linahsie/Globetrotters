@@ -422,11 +422,18 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #sidebar{
     background-color: purple;
     width: 40%;
     height: 100%;
     position: absolute;
+    padding: 0 10px;
 }
 
 #view-sidebar {
@@ -439,7 +446,7 @@ there.
 }
 
 #map {
-    position:absolute;
+    position: absolute;
     height: 100%;
     width: 100%;
     z-index: -1;
@@ -449,16 +456,13 @@ there.
 
 }
 
-#sidebar_button{
-    position: absolute;
-    left: 0px;
-    z-index: 10;
-}
 
 #instagram_logo{
-    height: 8%;
-    width: 100%;
-    float: left;
+    width: 35%;
+    z-index: 10;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 #location_summary{
