@@ -453,16 +453,21 @@ there.
     z-index: -1;
 }
 
-#instagram_logo{
+#instagram_logo_container{
+    background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+    padding-bottom: 5px;
+}
+
+#instagram_text_logo{
     width: 35%;
     z-index: 10;
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
 }
-#instagram_logo_container{
-    background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
-    padding-bottom: 5px;
+#instagram_logo {
+    display: block;
+    margin: 0 auto;
 }
 
 #location_summary{
