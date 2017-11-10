@@ -486,6 +486,7 @@ there.
   width: 100%;
   float: left;
   border-bottom: 2px solid #E8E9EA;
+    padding-bottom: 10px;
 }
 
 #friend_summary{
