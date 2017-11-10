@@ -477,6 +477,7 @@ there.
 #instagram_logo {
     width: 35px;
     margin-right: 5px;
+    border: 1px solid #000000;
 }
 
 #location_summary{
@@ -485,6 +486,7 @@ there.
   height: 15%;
   width: 100%;
   float: left;
+    border: 1px solid #000000;
 }
 
 #friend_summary{
@@ -493,6 +495,7 @@ there.
   height: 15%;
   width: 100%;
   float: left;
+    border: 1px solid #000000;
 }
 
 #categories{
@@ -501,6 +504,7 @@ there.
   height: 15%;
   width: 100%;
   float: left;
+    border: 1px solid #000000;
 }
 
 
