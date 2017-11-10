@@ -459,6 +459,7 @@ there.
 #map {
     position: absolute;
     height: 100%;
+    margin-left: 40%;
     width: 100%;
     z-index: -1;
 }
