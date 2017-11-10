@@ -1,13 +1,41 @@
 // Variables
 var markers = [];
 var map;
+var initializedPostsUser = false;
+var users = ['@Lina', '@Wenzheng', '@Irina', '@Michael', '@Eric', '@Ashley', '@Homing', '@Geon', '@Jiho', '@Kush'];
 
-var icon_base = 'assets/categories/'
+var icon_base = 'assets/categories/';
 var icons = {
     bar: {
         icon: icon_base + 'bar_pin_test.png'
     }
 };
+
+$( document ).ready(function () {
+
+    // set up the Instagram api
+    var feed = new Instafeed({
+        get: 'user',
+        tagName: 'awesome',
+        accessToken: '4294116483.5c129f5.822305c4f7594a95923c2907edb68c98',
+        userId:'4294116483',
+        template: '<div class="post"> <div class="post_info"><p class="owner"></p> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a> </div>',
+        resolution: 'standard_resolution'
+    });
+    feed.run();
+});
+
+function initializePostsOwner() {
+    if (initializedPostsUser === true)
+        return;
+    initializedPostsUser = true;
+    var posts = document.getElementsByClassName("owner");
+    console.log(posts.length);
+    for (i = 0; i < posts.length; i++) {
+        console.log(posts[i].innerHTML);
+        posts[i].innerHTML = users[Math.floor(Math.random()*users.length)];
+    }
+}
 
 function open_sidebar() {
     document.getElementById("map").style.marginLeft = "40%";
