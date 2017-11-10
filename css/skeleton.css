@@ -30,7 +30,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
   position: relative;
-  width: 100%;
+  width: 100% !important;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
@@ -497,6 +497,11 @@ there.
 
 /* Posts
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+#content .post{
+  float: left;
+  width: 48%;
+  margin: 5px;
+}
 #content .product {
   background: #fff;
   border: solid 1px #e6e6e6;
@@ -523,8 +528,7 @@ there.
   }
 }
 #content .product .img-container,
-#content .product .front,
-#content .product .back {
+#content .product .front{
   width: 100%;
 }
 #content .product .front{
