@@ -584,8 +584,11 @@ there.
 #content .product .text p.price del {
   color: #999999;
 }
-#post_img{
-  width:100%;
+.img-responsive{
+  display: block;
+  width: 100%;
+  height: auto;
 }
+
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
