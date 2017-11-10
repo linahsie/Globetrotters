@@ -584,6 +584,8 @@ there.
 #content .product .text p.price del {
   color: #999999;
 }
-#post_img{}
+#post_img{
+  width:100%;
+}
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
