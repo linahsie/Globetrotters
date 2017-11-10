@@ -428,6 +428,10 @@ there.
     box-sizing: border-box;
 }
 
+h3 {
+    margin-top: 10px !important;
+}
+
 #sidebar_button{
   position: absolute;
   left: 40%;
@@ -443,7 +447,7 @@ there.
     overflow: scroll;
 }
 
-#foo {
+#search_bar {
     background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
 }
 
@@ -501,12 +505,26 @@ there.
 #categories{
   padding: 0 10px;
   background-color: white;
-  height: 15%;
   width: 100%;
   float: left;
   border-bottom: 2px solid #E8E9EA;
 }
 
+#categories > div {
+    margin-bottom: 10px;
+    float: left;
+}
+
+#categories > div > img {
+    width: 50px;
+    margin-right: 5px;
+}
+
+#see_more {
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 10px 20px !important;
+}
 
 #post_content{
   padding: 0 10px;

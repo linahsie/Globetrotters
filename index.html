@@ -35,7 +35,7 @@
     <button id="sidebar_button" onclick="close_sidebar()">☰</button>
 
     <div id="sidebar">
-        <div id="foo">
+        <div id="search_bar">
             <input id="search" class="controls" type="text" placeholder="Search.." onchange="updateView(this.value)">
 
             <div id="instagram_logo_container">
@@ -53,11 +53,15 @@
         </div>
         <div id="categories">
             <h3>Categories</h3>
-            <img src="assets/categories/restaurant.png">
-            <img src="assets/categories/bar.png">
-            <img src="assets/categories/hotel.png">
-            <img src="assets/categories/ferris-wheel.png">
-            <img src="assets/categories/oak-tree.png">
+            <div>
+                <img src="assets/categories/restaurant.png">
+                <img src="assets/categories/bar.png">
+                <img src="assets/categories/hotel.png">
+                <img src="assets/categories/tickets.png">
+                <img src="assets/categories/oak-tree.png">
+            </div>
+            <button id="see_more">See more</button>
+            
         </div>
 
         <div id="post_content">
