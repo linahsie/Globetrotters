@@ -428,6 +428,12 @@ there.
     box-sizing: border-box;
 }
 
+#sidebar_button{
+  position: absolute;
+  left: 0px;
+  z-index: 10;
+}
+
 #sidebar{
     background-color: white;
     width: 40%;

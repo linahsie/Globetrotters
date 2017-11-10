@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
@@ -33,7 +32,7 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <button id="sidebar_button" onclick="open_sidebar()" style="display:inline">☰</button>
+    <button id="sidebar_button" onclick="open_sidebar()">☰</button>
 
     <div id="sidebar">
         <input id="search" class="controls" type="text" placeholder="Search.." onchange="updateView(this.value)">
@@ -43,13 +42,18 @@
             <img src="assets/instagram_logo.png" id="instagram_text_logo">
         </div>
 
+        <hr>
+
         <div id="location_summary">
             <h3 id="location">Current Location</h3>
         </div>
 
+        <hr>
+
         <div id="friend_summary">
             <h3>Friends</h3>
         </div>
+        <hr>
         <div id="categories">
             <h3>Categories</h3>
             <img src="assets/categories/restaurant.png">
@@ -58,13 +62,14 @@
             <img src="assets/categories/ferris-wheel.png">
             <img src="assets/categories/oak-tree.png">
         </div>
+
         <div id="post_content">
             <h3>Posts</h3>
 
             <div id="content">
                 <div class="container">
                     <div id="instafeed"> </div>
-                </div>>
+                </div>
             </div>
 
             <script type="text/javascript">

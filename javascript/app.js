@@ -5,7 +5,7 @@ var map;
 var icon_base = 'assets/categories/'
 var icons = {
     bar: {
-        icon: icon_base + 'bar.png'
+        icon: icon_base + 'bar_pin_test.png'
     }
 };
 
