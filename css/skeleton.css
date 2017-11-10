@@ -429,11 +429,10 @@ there.
 }
 
 #sidebar{
-    background-color: purple;
+    background-color: white;
     width: 40%;
     height: 100%;
     position: absolute;
-    padding: 0 10px;
     display:none;
     overflow: scroll;
 }
@@ -465,8 +464,12 @@ there.
     margin: 0 auto;
     margin-bottom: 10px;
 }
+#instagram_logo_container{
+  background-color: purple;
+}
 
 #location_summary{
+  padding: 0 10px;
   background-color: white;
   height: 15%;
   width: 100%;
@@ -474,6 +477,7 @@ there.
 }
 
 #friend_summary{
+  padding: 0 10px;
   background-color: white;
   height: 15%;
   width: 100%;
@@ -481,6 +485,7 @@ there.
 }
 
 #categories{
+  padding: 0 10px;
   background-color: white;
   height: 15%;
   width: 100%;
@@ -489,6 +494,7 @@ there.
 
 
 #post_content{
+  padding: 0 10px;
   background-color: white;
   height: auto;
   width: 100%;
@@ -570,5 +576,6 @@ there.
 #content .product .text p.price del {
   color: #999999;
 }
+#post_img{}
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

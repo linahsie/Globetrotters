@@ -39,9 +39,11 @@
         <div id="search_bar">
             <input id="search" class="controls" type="text" placeholder="Search.." onchange="updateView(this.value)">
         </div>
-        
-        <img src="assets/instagram_logo.png" id="instagram_logo">
-        
+
+        <div id="instagram_logo_container">
+            <img src="assets/instagram_logo.png" id="instagram_logo">
+        </div>
+
         <div id="location_summary">
             <h3 id="location">Current Location</h3>
         </div>
@@ -72,7 +74,7 @@
                     tagName: 'awesome',
                     accessToken: '4294116483.5c129f5.822305c4f7594a95923c2907edb68c98',
                     userId:'4294116483',
-                    template: '<div class="post"> <div class="product"> <div class="img-container"> <div class="front"> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a> </div> </div> <a href="detail.html" class="invisible"> <img src="{{image}}" alt="" class="img-responsive"> </a> <div class="text"> <h3>{{caption}}</a></h3> </div> <!-- /.text --> </div> <!-- /.product --> </div>'
+                    template: '<div class="post"> <div class="product"> <div class="img-container"> <div class="front"> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive" id="post_img"> </a> </div> </div> <a href="detail.html" class="invisible"> <img src="{{image}}" alt="" class="img-responsive"> </a> <div class="text"> <h3>{{caption}}</a></h3> </div> <!-- /.text --> </div> <!-- /.product --> </div>'
                 });
                 feed.run();
             </script>
