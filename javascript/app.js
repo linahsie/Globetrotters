@@ -1,13 +1,27 @@
 // Variables
 var markers = [];
+var results = [];
 var map;
+var geocoder;
 var initializedPostsUser = false;
 var users = ['@Lina', '@Wenzheng', '@Irina', '@Michael', '@Eric', '@Ashley', '@Homing', '@Geon', '@Jiho', '@Kush'];
 
 var icon_base = 'assets/categories/';
 var icons = {
-    bar: {
-        icon: icon_base + 'bar_pin_test.png'
+    bar: icon_base + 'bar_pin.png',
+    hotel: icon_base + 'hotel_pin.png',
+    oak: icon_base + 'oak-tree_pin.png',
+    restaurant: icon_base + 'restaurant_pin.png',
+    tickets: icon_base + 'tickets_pin.png'
+};
+var locations = {
+    biscuit_bitch: {
+        address: "1909 1st Ave, Seattle, WA 98101",
+        lat_lng: {lat: 0, lng:0}
+    },
+    union: {
+        address: "1401 W Green St, Urbana, IL 61801",
+        lat_lng: {lat: 0, lng:0}
     }
 };
 
@@ -71,14 +85,22 @@ function initAutocomplete() {
 
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
+        markers.forEach(removeMarkers);
         searchBox.setBounds(map.getBounds());
         google.maps.event.trigger(map, 'resize');
+        
+        if(map.getBounds().contains(locations.biscuit_bitch.lat_lng)) {
+            addMarker(locations.biscuit_bitch.lat_lng);
+        }
+        
+        if(map.getBounds().contains(locations.union.lat_lng)) {
+            addMarker(locations.union.lat_lng);
+        }
     });
     
-    map.addListener('center_changed', function() {
-        markers.forEach(removeMarkers);
-        addMarker(map.getCenter());
-    });
+    geocoder = new google.maps.Geocoder();
+    geocodeAddress(locations.biscuit_bitch);
+    geocodeAddress(locations.union);
     
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
@@ -130,12 +152,20 @@ function initAutocomplete() {
 function addMarker(location) {
     markers.push(new google.maps.Marker({
         map: map,
-        position: map.getCenter(),
-        icon: icons.bar.icon
+        position: location,
+        icon: icons.restaurant
     }));
 }
     
 // Remove all markers
 function removeMarkers(marker) {
     marker.setMap(null);
+}
+
+function geocodeAddress(location) {
+    geocoder.geocode({'address': location.address}, function(results, status) {
+        if(status === 'OK') {
+            location.lat_lng = results[0].geometry.location;
+        }
+    });
 }
