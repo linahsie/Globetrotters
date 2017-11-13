@@ -54,6 +54,11 @@ var locations = {
         address: "110 Stewart St, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.bar
+    },
+    Volunteer_Park: {
+        address: "1247 15th Ave E, Seattle, WA 98112",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.oak
     }
 };
 
@@ -208,12 +213,12 @@ function geocodeAddress(location) {
 }
 
 function geocodeLatLng(lat_lng) {
+    //var country = "";
+    //var city = "";
     geocoder.geocode({'location': lat_lng}, function(results, status) {
-        if(status === 'OK') {
-            if(results[0]) {
-                updateView(results[0].formatted_address);
-                console.log(results[0].types);
-            }
+        if(results) {
+            updateView(results[0].address_components.long_name);
         }
     })
+    //updateView(city + ", " + country);
 }
