@@ -15,32 +15,12 @@ var icons = {
     tickets: icon_base + 'tickets_pin.png'
 };
 var locations = {
-    biscuit_bitch: {
+    Biscuit_Bitch: {
         address: "1909 1st Ave, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.restaurant
     },
-    Quality_Athletics: {
-        address: "121 S King St, Seattle, WA 98104",
-        lat_lng: {lat: 0, lng: 0},
-        icon: icons.restaurant
-    },
-    Local_360: {
-        address: "2234 1st Ave, Seattle, WA 98121",
-        lat_lng: {lat: 0, lng: 0},
-        icon: icons.restaurant
-    },
-    Cafe_Trophy: {
-        address: "700 110th Avenue Northeast, The Shops at The Bravern, Bellevue, WA 98004",
-        lat_lng: {lat: 0, lng: 0},
-        icon: icons.bar
-    },
-    Top_Pot_doughnuts: {
-        address: "2124 5th Ave, Seattle, WA 98121",
-        lat_lng: {lat: 0, lng: 0},
-        icon: icons.bar
-    }, 
-    Seattle_Air_Museum: {
+    Seattle_Art_Museum: {
         address: "1300 1st Ave, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.tickets
@@ -127,6 +107,13 @@ function initAutocomplete() {
         geocodeAddress(loc);
     }
 
+    for(var key in locations) {
+        var loc = locations[key];
+        if(map.getBounds().contains(loc.lat_lng)) {
+            addMarker(loc.lat_lng, loc.icon);
+        }
+    }
+    
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
         markers.forEach(removeMarkers);
@@ -135,12 +122,7 @@ function initAutocomplete() {
         
         geocodeLatLng(map.getCenter());
         
-        for(var key in locations) {
-            var loc = locations[key];
-            if(map.getBounds().contains(loc.lat_lng)) {
-                addMarker(loc.lat_lng, loc.icon);
-            }
-        }
+        
     });
     
     // Listen for the event fired when the user selects a prediction and retrieve
@@ -213,12 +195,5 @@ function geocodeAddress(location) {
 }
 
 function geocodeLatLng(lat_lng) {
-    //var country = "";
-    //var city = "";
-    geocoder.geocode({'location': lat_lng}, function(results, status) {
-        if(results) {
-            updateView(results[0].address_components.long_name);
-        }
-    })
-    //updateView(city + ", " + country);
+    
 }
