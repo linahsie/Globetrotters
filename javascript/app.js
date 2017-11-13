@@ -50,7 +50,7 @@ $( document ).ready(function () {
         tagName: 'awesome',
         accessToken: '4294116483.5c129f5.822305c4f7594a95923c2907edb68c98',
         userId:'4294116483',
-        template: '<div class="post"><p class="owner"></p>  <div class="post_info"> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a> </div>',
+        template: '<div class="post"><p class="owner"></p> <p id="star" onclick="changeStarColor(this)">&#9733;</p>  <div class="post_content"> <div class="post_info"> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a></div> </div>',
         resolution: 'standard_resolution'
     });
     feed.run();
@@ -68,6 +68,20 @@ function initializePostsOwner() {
     }
 }
 
+function changeStarColor(target){
+    console.log(this);
+
+    if (target.style.color === "yellow"){
+        target.style.opacity = 0.3;
+        target.style.color = "black";
+    }
+    else{
+        console.log("hello1");
+        target.style.opacity = 1;
+        target.style.color = "yellow";
+    }
+}
+
 function open_sidebar() {
     document.getElementById("map").style.marginLeft = "40%";
     document.getElementById("map").style.width = "60%";
@@ -75,6 +89,7 @@ function open_sidebar() {
     document.getElementById("sidebar_button").style.left = "40%";
     document.getElementById("sidebar_button").onclick = close_sidebar;
 }
+
 function close_sidebar() {
     document.getElementById("map").style.marginLeft = "0";
     document.getElementById("map").style.width = "100%";

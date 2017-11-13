@@ -520,7 +520,7 @@ h3 {
     margin-right: 5px;
 }
 
-.see_more {
+.friend_category_button {
     margin-left: 10px;
     margin-top: 5px;
     padding: 10px 20px !important;
@@ -534,6 +534,12 @@ h3 {
   float: left;
 }
 
+.img_in_button{
+  height: 20px;
+  width: 20px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+}
 /* Posts
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media (min-width: 400px) {
@@ -575,7 +581,7 @@ h3 {
   height: auto;
 }
 
-img.img-responsive:hover{
+.post_content:hover img.img-responsive{
   -webkit-filter: opacity(30%);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -584,7 +590,7 @@ img.img-responsive:hover{
   transition: all 0.5s ease;
 }
 
-.post:hover .post_info{
+.post_content:hover .post_info{
   -webkit-filter: opacity(100%);
   opacity: 1;
   -webkit-transition: all 0.5s ease;
@@ -607,5 +613,22 @@ img.img-responsive:hover{
   margin: 0 5px !important;
 }
 
+.owner {
+  left: 0;
+  float: left;
+  margin: 0;
+}
+
+#star {
+  height: auto;
+  right: 0;
+  color: black;
+  float: right;
+  opacity: 0.3;
+  font-size: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+}
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
