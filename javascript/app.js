@@ -17,11 +17,13 @@ var icons = {
 var locations = {
     biscuit_bitch: {
         address: "1909 1st Ave, Seattle, WA 98101",
-        lat_lng: {lat: 0, lng:0}
+        lat_lng: {lat: 0, lng:0},
+        icon: icons.restaurant
     },
     union: {
         address: "1401 W Green St, Urbana, IL 61801",
-        lat_lng: {lat: 0, lng:0}
+        lat_lng: {lat: 0, lng:0},
+        icon: icons.oak
     }
 };
 
@@ -82,6 +84,13 @@ function initAutocomplete() {
     var input = document.getElementById('search');
     var searchBox = new google.maps.places.SearchBox(input);
     //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    
+    //geocoding
+    geocoder = new google.maps.Geocoder();
+    for(var key in locations) {
+        var loc = locations[key];
+        geocodeAddress(loc);
+    }
 
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
@@ -89,18 +98,14 @@ function initAutocomplete() {
         searchBox.setBounds(map.getBounds());
         google.maps.event.trigger(map, 'resize');
         
-        if(map.getBounds().contains(locations.biscuit_bitch.lat_lng)) {
-            addMarker(locations.biscuit_bitch.lat_lng);
-        }
         
-        if(map.getBounds().contains(locations.union.lat_lng)) {
-            addMarker(locations.union.lat_lng);
+        for(var key in locations) {
+            var loc = locations[key];
+            if(map.getBounds().contains(loc.lat_lng)) {
+                addMarker(loc.lat_lng, loc.icon);
+            }
         }
     });
-    
-    geocoder = new google.maps.Geocoder();
-    geocodeAddress(locations.biscuit_bitch);
-    geocodeAddress(locations.union);
     
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
@@ -149,11 +154,11 @@ function initAutocomplete() {
 }
 
 // Add marker (pin) based on location (right now just puts it in center of map)
-function addMarker(location) {
+function addMarker(location, icon) {
     markers.push(new google.maps.Marker({
         map: map,
         position: location,
-        icon: icons.restaurant
+        icon: icon
     }));
 }
     
