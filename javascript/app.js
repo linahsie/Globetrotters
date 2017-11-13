@@ -17,13 +17,43 @@ var icons = {
 var locations = {
     biscuit_bitch: {
         address: "1909 1st Ave, Seattle, WA 98101",
-        lat_lng: {lat: 0, lng:0},
+        lat_lng: {lat: 0, lng: 0},
         icon: icons.restaurant
     },
-    union: {
-        address: "1401 W Green St, Urbana, IL 61801",
-        lat_lng: {lat: 0, lng:0},
-        icon: icons.oak
+    Quality_Athletics: {
+        address: "121 S King St, Seattle, WA 98104",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.restaurant
+    },
+    Local_360: {
+        address: "2234 1st Ave, Seattle, WA 98121",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.restaurant
+    },
+    Cafe_Trophy: {
+        address: "700 110th Avenue Northeast, The Shops at The Bravern, Bellevue, WA 98004",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.bar
+    },
+    Top_Pot_doughnuts: {
+        address: "2124 5th Ave, Seattle, WA 98121",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.bar
+    }, 
+    Seattle_Air_Museum: {
+        address: "1300 1st Ave, Seattle, WA 98101",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.tickets
+    },
+    The_Edgewater: {
+        address: "2411 Alaskan Way, Seattle, WA 98121",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.hotel
+    },
+    The_Nest: {
+        address: "110 Stewart St, Seattle, WA 98101",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.bar
     }
 };
 
@@ -98,6 +128,7 @@ function initAutocomplete() {
         searchBox.setBounds(map.getBounds());
         google.maps.event.trigger(map, 'resize');
         
+        geocodeLatLng(map.getCenter());
         
         for(var key in locations) {
             var loc = locations[key];
@@ -162,15 +193,27 @@ function addMarker(location, icon) {
     }));
 }
     
-// Remove all markers
+// Remove a marker
 function removeMarkers(marker) {
     marker.setMap(null);
 }
 
+// Convert address to lat lng
 function geocodeAddress(location) {
     geocoder.geocode({'address': location.address}, function(results, status) {
         if(status === 'OK') {
             location.lat_lng = results[0].geometry.location;
         }
     });
+}
+
+function geocodeLatLng(lat_lng) {
+    geocoder.geocode({'location': lat_lng}, function(results, status) {
+        if(status === 'OK') {
+            if(results[0]) {
+                updateView(results[0].formatted_address);
+                console.log(results[0].types);
+            }
+        }
+    })
 }
