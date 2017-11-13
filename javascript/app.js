@@ -65,7 +65,7 @@ $( document ).ready(function () {
         tagName: 'awesome',
         accessToken: '4294116483.5c129f5.822305c4f7594a95923c2907edb68c98',
         userId:'4294116483',
-        template: '<div class="post"> <div class="post_info"><p class="owner"></p> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a> </div>',
+        template: '<div class="post"><p class="owner"></p>  <div class="post_info"> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a> </div>',
         resolution: 'standard_resolution'
     });
     feed.run();
