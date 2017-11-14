@@ -39,7 +39,17 @@ var locations = {
         address: "1247 15th Ave E, Seattle, WA 98112",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.oak
-    }
+    },
+	Palisade_Restaurant: {
+		address: "2601 W Marina Pl, Seattle, WA 98199-4331",
+		lat_lng: {lat: 0, lng: 0},
+		icon: icons.restaurant
+	},
+	Pike_Place_Market: {
+		address: "Between Pike and Pine sts. at First Ave., Seattle, WA 98101",
+		lat_lng: {lat: 0, lng: 0},
+		icon: icons.oak
+	}
 };
 
 $( document ).ready(function () {
@@ -104,8 +114,14 @@ function updateView(value){
 
 // Map and Search box
 function initAutocomplete() {
+	geocoder = new google.maps.Geocoder();
+    for(var key in locations) {
+        var loc = locations[key];
+        geocodeAddress(loc);
+    }
+	
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -33.8688, lng: 151.2195},
+        center: {lat: 47.6062095, lng: -122.3320708},
         zoom: 13,
         mapTypeId: 'roadmap'
     });
@@ -116,28 +132,31 @@ function initAutocomplete() {
     //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     
     //geocoding
-    geocoder = new google.maps.Geocoder();
-    for(var key in locations) {
-        var loc = locations[key];
-        geocodeAddress(loc);
-    }
-
-    for(var key in locations) {
-        var loc = locations[key];
-        if(map.getBounds().contains(loc.lat_lng)) {
-            addMarker(loc.lat_lng, loc.icon);
-        }
-    }
+    	
     
     // Bias the SearchBox results towards current map's viewport.
+	map.addListener('tilesloaded', function() {
+		for(var key in locations) {
+			var loc = locations[key];
+			if(map.getBounds().contains(loc.lat_lng)) {
+				addMarker(loc.lat_lng, loc.icon);
+        	}
+    	}
+		markers.forEach(addClickListener);
+	});
+	
     map.addListener('bounds_changed', function() {
         markers.forEach(removeMarkers);
         searchBox.setBounds(map.getBounds());
         google.maps.event.trigger(map, 'resize');
         
-        geocodeLatLng(map.getCenter());
-        
-        
+        for(var key in locations) {
+			var loc = locations[key];
+			if(map.getBounds().contains(loc.lat_lng)) {
+				addMarker(loc.lat_lng, loc.icon);
+        	}
+    	}
+		markers.forEach(addClickListener);
     });
     
     // Listen for the event fired when the user selects a prediction and retrieve
@@ -159,21 +178,6 @@ function initAutocomplete() {
                 console.log("Returned place contains no geometry");
                 return;
             }
-            var icon = {
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(25, 25)
-            };
-
-            // Create a marker for each place.
-            markers.push(new google.maps.Marker({
-                map: map,
-                icon: icon,
-                title: place.name,
-                position: place.geometry.location
-            }));
 
             if (place.geometry.viewport) {
                 // Only geocodes have viewport.
@@ -209,6 +213,15 @@ function geocodeAddress(location) {
     });
 }
 
-function geocodeLatLng(lat_lng) {
-    
+
+
+function addClickListener(marker) {
+	var modal = document.getElementById("modal");
+	marker.addListener('click', function() {	
+		modal.style.display = "block";
+	});
+}
+
+function closeModal() {
+	document.getElementById("modal").style.display="none";
 }
