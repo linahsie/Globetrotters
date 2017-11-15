@@ -657,7 +657,7 @@ h3 {
   background: none;
 }
 
-#modal {
+.modal {
 	display: none;
 	position: fixed;
 	z-index: 2;
@@ -668,8 +668,9 @@ h3 {
 	overflow: auto;
 }
 
-#modal-content {
+.modal-content {
     height: 90vh;
+    margin: 20px;
 }
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
