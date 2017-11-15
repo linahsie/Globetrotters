@@ -667,9 +667,38 @@ h3 {
 	overflow: auto;
 }
 
+#close_modal {
+    right: 0;
+    position: absolute;
+}
+
 .modal-content {
     height: 90vh;
     margin: 20px;
+}
+
+.clear {
+    float: none;
+}
+
+#modal-container-1 {
+    padding: 10px;
+    text-align: center;
+    background-color: blue;
+}
+
+#modal-container-2 {
+    float: left;
+    width: 40%;
+    background-color: burlywood;
+    padding: 10px;
+}
+
+#modal-container-3 {
+    float: left;
+    width: 60%;
+    background-color: aliceblue;
+    padding: 10px;
 }
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
