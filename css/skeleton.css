@@ -634,7 +634,8 @@ h3 {
   height: auto;
   right: 0;
   color: black;
-  margin: 0;
+  margin-left: 2px;
+  margin-bottom: 0;
   float: right;
   opacity: 0.3;
   font-size: 17px;
@@ -646,8 +647,8 @@ h3 {
 #add {
   height: auto;
   right: 0;
-  bottom: 0;
-  margin: 0;
+  margin-left: 2px;
+  margin-bottom: 0;
   color: black;
   float: right;
   opacity: 0.3;

@@ -85,12 +85,12 @@ function changeStarColor(target){
     if (star.style.color === "yellow"){
         star.style.opacity = 0.3;
         star.style.color = "black";
-        addFavorite.innerHTML="Add to favorite ";
+        addFavorite.innerHTML="Add to favorite";
     }
     else{
         star.style.opacity = 1;
         star.style.color = "yellow";
-        addFavorite.innerHTML="Favorite ";
+        addFavorite.innerHTML="Favorited";
     }
 }
 
