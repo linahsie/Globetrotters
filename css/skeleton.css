@@ -496,6 +496,7 @@ h3 {
 #friend_summary{
   padding: 0 10px;
   background-color: white;
+  height: 15%;
   width: 100%;
   float: left;
   border-bottom: 2px solid #E8E9EA;
@@ -626,16 +627,31 @@ h3 {
   left: 0;
   float: left;
   margin: 0;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 #star {
   height: auto;
   right: 0;
   color: black;
+  margin: 0;
   float: right;
   opacity: 0.3;
-  font-size: 20px;
+  font-size: 17px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+#add {
+  height: auto;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  color: black;
+  float: right;
+  opacity: 0.3;
+  font-size: 17px;
   padding: 0;
   border: none;
   background: none;
