@@ -586,7 +586,7 @@ h3 {
 .img-responsive{
   display: block;
   width: 100%;
-  height: auto;
+  height: 280px !important;
 }
 
 .post_content:hover img.img-responsive{
