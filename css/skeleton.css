@@ -501,6 +501,16 @@ h3 {
   border-bottom: 2px solid #E8E9EA;
 }
 
+#friend_summary > div {
+  margin-bottom: 10px;
+  float: left;
+}
+
+#friend_summary > div > img {
+  width: 50px;
+  margin-right: 5px;
+}
+
 #categories{
   padding: 0 10px;
   background-color: white;
