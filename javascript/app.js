@@ -58,8 +58,8 @@ $( document ).ready(function () {
     var feed = new Instafeed({
         get: 'user',
         tagName: 'awesome',
-        accessToken: '4294116483.5c129f5.822305c4f7594a95923c2907edb68c98',
-        userId:'4294116483',
+        accessToken: '6419152996.166bd80.3f5e1392db904047832daf97129569e4',
+        userId:'6419152996',
         template: '<div class="post"><p class="owner"></p> <div onclick="changeStarColor(this)" class = "like_container"> <p id="star" > &#9733;</p> <p id="add" >Add to favorite</p> </div> <div class="post_content"> <div class="post_info"> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a></div> </div>',
         resolution: 'standard_resolution'
     });
