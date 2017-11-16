@@ -36,6 +36,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <button id="sidebar_button" onclick="close_sidebar(event)">☰</button>
 
+    <!-- sidebar div -->
     <div id="sidebar">
         <div id="search_bar">
             <input id="search" class="controls" type="text" placeholder="Search.." onchange="updateView(this.value)">
@@ -62,6 +63,7 @@
             <button class="see_more_button">See more</button>
             <button class="see_more_button"><img src="assets/filter.png" class="img_in_button">Filter</button>
         </div>
+        
         <div id="categories">
             <h3 style="color:#8a3ab9">Categories</h3>
             <div>
@@ -72,7 +74,7 @@
                 <img id="cat_tic" src="assets/categories/tickets.png" alt="Attractions category button" title="Attractions" onclick="changeCategory(icons.tickets, icons.cat_tickets_selected, 'cat_tic')">
                 <img id="cat_oak" src="assets/categories/oak-tree.png" alt="Parks category button" title="Parks" onclick="changeCategory(icons.oak, icons.cat_oak_selected, 'cat_oak')">
             </div>
-            <button class="see_more_button" onclick="catSeeMore(event)">See more</button>
+            <button class="see_more_button" onclick="catSeeMore()">See more</button>
             
         </div>
 
@@ -87,18 +89,22 @@
 
         </div>
     </div>
+    <!-- end of sidebar div -->
 
+    <!-- view-sidebar div -->
     <div id="view-sidebar">
         <img src="https://png.icons8.com/instagram/color/40/000000" alt="Instagram view button">
         <img src="https://png.icons8.com/facebook/color/40/000000" alt="Facebook view button">
         <img src="https://png.icons8.com/google/color/40/000000" alt="Google view button">
         <img src="https://png.icons8.com/star-filled/color/40/000000" alt="Favorite view button">
     </div>
+    <!-- end of view-sidebar div> -->
 
     <div id="map">
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU2_MvYmzRaTirG2mIsGTTT4Mz-E_cIA&libraries=places&callback=initAutocomplete" async defer></script>
     </div>
 
+    <!-- post modal -->
     <div id="post_modal" class="modal">
         <div class="post-modal-content">
             <button id="close_modal_button" class="close_modal_button" onclick="closeModal('post_modal')">X</button>
@@ -106,10 +112,19 @@
             <p class="post_caption" id = "post_caption" align="center">123456</p>
         </div>
     </div>
+    
+    <!-- categories modal -->
+	<div id="cat_modal" class="modal">
+		<div class="cat-modal-content">
+			<button class="close_modal" onclick="closeModal('cat_modal')">close</button>
+			<p>test</p>
+		</div>
+	</div>
 
-	<div id="modal" class="modal">
+    <!-- pins modal with tripadvisor-->
+	<div id="pin-modal" class="modal">
 		<div class="modal-content">
-			<button id="close_modal" class="close_modal" onclick="closeModal('modal')">close</button>
+			<button id="close_modal" class="close_modal" onclick="closeModal('pin-modal')">close</button>
             <div class="none"/>
             <div id="modal-container-1">
                 <h3>Location name</h3>
@@ -121,13 +136,6 @@
             <div id="modal-container-3">
                 <img src="https://developer-tripadvisor.s3.amazonaws.com/uploads/tripadvisor-horz-rgb_newcolor_(1)_(1).svg" alt="TripAdvisor logo" id="tripadvisor-logo">
             </div>
-		</div>
-	</div>
-
-	<div id="cat_modal" class="modal">
-		<div class="cat-modal-content">
-			<button class="close_modal" onclick="closeModal('cat_modal')">close</button>
-			<p>test</p>
 		</div>
 	</div>
 

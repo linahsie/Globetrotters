@@ -228,10 +228,9 @@ function geocodeAddress(location) {
     });
 }
 
-
-
 function addClickListener(marker) {
-	var modal = document.getElementById("modal");
+    console.log("addclicklistenermarker");
+	var modal = document.getElementById("pin-modal");
 	marker.addListener('click', function() {	
 		modal.style.display = "block";
 	});
@@ -279,5 +278,6 @@ function changeCategory(category, selected, id) {
 }
 
 function catSeeMore() {
-	document.getElementById("cat_modal").style.display = "block";
+    console.log("hi");
+    document.getElementById("cat_modal").style.display = "block";
 }
