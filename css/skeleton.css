@@ -669,14 +669,43 @@ h3 {
     background-color: rgba(0,0,0,0.4);
 }
 
-#close_modal {
+.close_modal {
     right: 0;
     position: absolute;
+}
+
+.close_modal_button{
+    right: -30px;
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    height: 30px;
+    width: 30px;
+    padding:3px;
+}
+
+.close_modal_button:hover{
+  opacity: 1;
+  background-color: black;
+  color: white;
 }
 
 .modal-content {
     height: 90vh;
     margin: 20px;
+}
+
+.post-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.post_caption{
+    background-color: black;
+    color: white;
 }
 
 .clear {
@@ -706,5 +735,7 @@ h3 {
 #tripadvisor-logo {
     width: 350px;
 }
+
+
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

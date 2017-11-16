@@ -77,7 +77,7 @@ $( document ).ready(function () {
         tagName: 'awesome',
         accessToken: '6419152996.166bd80.3f5e1392db904047832daf97129569e4',
         userId:'6419152996',
-        template: '<div class="post"><p id ={{id}} class="owner"></p> <div onclick="changeStarColor(this)" class = "like_container"> <p id="star" > &#9733;</p> <p id="add" >Add to favorite</p> </div> <div class="post_content"> <div class="post_info"> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a></div> </div>',
+        template: '<div class="post"><p id ={{id}} class="owner"></p> <div onclick="changeStarColor(this)" class = "like_container"> <p id="star" > &#9733;</p> <p id="add" >Add to favorite</p> </div> <div class="post_content" onclick="open_post_modal(this)"> <div class="post_info"> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <div> <img id ="post_image" src="{{image}}" alt="" class="img-responsive"> </div> </div> </div>',
         resolution: 'standard_resolution'
     });
     feed.run();
@@ -239,6 +239,15 @@ function addClickListener(marker) {
 
 function closeModal(id) {
 	document.getElementById(id).style.display="none";
+}
+
+function open_post_modal(target){
+    console.log(target.childNodes);
+    var link = target.childNodes[3].childNodes[1].src;
+    var caption = target.childNodes[1].childNodes[1].innerHTML;
+    document.getElementById('post_img_large').src= link;
+    document.getElementById('post_modal').style.display="block";
+    document.getElementById('post_caption').innerHTML=caption;
 }
 
 function changeCategory(category, selected, id) {

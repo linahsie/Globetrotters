@@ -98,10 +98,18 @@
     <div id="map">
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU2_MvYmzRaTirG2mIsGTTT4Mz-E_cIA&libraries=places&callback=initAutocomplete" async defer></script>
     </div>
-	
+
+    <div id="post_modal" class="modal">
+        <div class="post-modal-content">
+            <button id="close_modal_button" class="close_modal_button" onclick="closeModal('post_modal')">X</button>
+            <img id = "post_img_large" src="">
+            <p class="post_caption" id = "post_caption" align="center">123456</p>
+        </div>
+    </div>
+
 	<div id="modal" class="modal">
 		<div class="modal-content">
-			<button id="close_modal" onclick="closeModal('modal')">close</button>
+			<button id="close_modal" class="close_modal" onclick="closeModal('modal')">close</button>
             <div class="none"/>
             <div id="modal-container-1">
                 <h3>Location name</h3>
@@ -115,6 +123,8 @@
             </div>
 		</div>
 	</div>
+
+
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
