@@ -33,39 +33,53 @@ var icons = {
 };
 var locations = {
     Biscuit_Bitch: {
+		name: "Biscuit Bitch",
         address: "1909 1st Ave, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
-        icon: icons.restaurant
+        icon: icons.restaurant,
+		category: icons.cat_restaurant
     },
     Seattle_Art_Museum: {
+		name: "Seattle Art Museum",
         address: "1300 1st Ave, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
-        icon: icons.tickets
+        icon: icons.tickets,
+		category: icons.cat_tickets
     },
     The_Edgewater: {
+		name: "The Edgewater",
         address: "2411 Alaskan Way, Seattle, WA 98121",
         lat_lng: {lat: 0, lng: 0},
-        icon: icons.hotel
+        icon: icons.hotel,
+		category: icons.cat_hotel
     },
     The_Nest: {
+		name: "The Nest",
         address: "110 Stewart St, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
-        icon: icons.bar
+        icon: icons.bar,
+		category: icons.cat_bar
     },
     Volunteer_Park: {
+		name: "Volunteer Park",
         address: "1247 15th Ave E, Seattle, WA 98112",
         lat_lng: {lat: 0, lng: 0},
-        icon: icons.oak
+        icon: icons.oak,
+		category: icons.cat_oak
     },
 	Palisade_Restaurant: {
+		name: "Palisade Restaurant",
 		address: "2601 W Marina Pl, Seattle, WA 98199-4331",
 		lat_lng: {lat: 0, lng: 0},
-		icon: icons.restaurant
+		icon: icons.restaurant,
+		category: icons.cat_restaurant
 	},
 	Pike_Place_Market: {
-		address: "Between Pike and Pine sts. at First Ave., Seattle, WA 98101",
+		name: "Pike Place Market",
+		address: "Between Pike and Pine Sts. at First Ave., Seattle, WA 98101",
 		lat_lng: {lat: 0, lng: 0},
-		icon: icons.camera
+		icon: icons.camera,
+		category: icons.cat_camera
 	}
 };
 
@@ -155,7 +169,7 @@ function initAutocomplete() {
 	map.addListener('tilesloaded', function() {
 		for(var key in locations) {
 			var loc = locations[key];
-			addMarker(loc.lat_lng, loc.icon);
+			addMarker(loc);
     	}
 		markers.forEach(addClickListener);
 	});
@@ -206,11 +220,12 @@ function initAutocomplete() {
 }
 
 // Add marker (pin) based on location (right now just puts it in center of map)
-function addMarker(location, icon) {
+function addMarker(loc) {
     markers.push(new google.maps.Marker({
         map: map,
-        position: location,
-        icon: icon
+        position: loc.lat_lng,
+        icon: loc.icon,
+		title: loc.name
     }));
 }
     
@@ -234,6 +249,14 @@ function addClickListener(marker) {
 	var modal = document.getElementById("modal");
 	marker.addListener('click', function() {	
 		modal.style.display = "block";
+		document.getElementById("location_name").innerHTML = marker.title;
+		for(var key in locations) {
+			var loc = locations[key];
+			if(loc.name == marker.title) {
+				document.getElementById("location_address").innerHTML = loc.address;
+				document.getElementById("location_category").src = loc.category;
+			}
+		}
 	});
 }
 
@@ -262,14 +285,14 @@ function changeCategory(category, selected, id) {
 	if(category == 'all') {
 		for(var key in locations) {
 			var loc = locations[key];
-			addMarker(loc.lat_lng, loc.icon);
+			addMarker(loc);
 			document.getElementById(id).src = selected;
 		}
 	} else {
 		for(var key in locations) {
 			var loc = locations[key];
 			if(loc.icon == category) {
-				addMarker(loc.lat_lng, loc.icon);
+				addMarker(loc);
 				document.getElementById(id).src = selected;
 			}
 		}
