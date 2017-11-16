@@ -274,6 +274,8 @@ function changeCategory(category, selected, id) {
 			}
 		}
 	}
+	
+	markers.forEach(addClickListener);
 }
 
 function catSeeMore() {
