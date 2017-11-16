@@ -656,6 +656,10 @@ h3 {
   background: none;
 }
 
+.like_container {
+    float: right;
+}
+
 /* pins modal stuff */
 .modal {
 	display: none;
