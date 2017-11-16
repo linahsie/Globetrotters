@@ -65,12 +65,12 @@
         <div id="categories">
             <h3 style="color:#8a3ab9">Categories</h3>
             <div>
-                <img src="assets/categories/all.png" alt="All category button" title="All">
-                <img src="assets/categories/restaurant.png" alt="Restaurants category button" title="Restaurants">
-                <img src="assets/categories/bar.png" alt="Bars category button" title="Bars">
-                <img src="assets/categories/camera.png" alt="Camera category button" title="Points of Interest">
-                <img src="assets/categories/tickets.png" alt="Attractions category button" title="Attractions">
-                <img src="assets/categories/oak-tree.png" alt="Parks category button" title="Parks">
+                <img id="cat_all" src="assets/categories/all_selected.png" alt="All category button" title="All" onclick="changeCategory('all', icons.cat_all_selected, 'cat_all')" >
+                <img id="cat_res" src="assets/categories/restaurant.png" alt="Restaurants category button" title="Restaurants" onclick="changeCategory(icons.restaurant, icons.cat_restaurant_selected, 'cat_res')">
+                <img id="cat_bar" src="assets/categories/bar.png" alt="Bars category button" title="Bars" onclick="changeCategory(icons.bar, icons.cat_bar_selected, 'cat_bar')">
+                <img id="cat_cam" src="assets/categories/camera.png" alt="Camera category button" title="Points of Interest" onclick="changeCategory(icons.camera, icons.cat_camera_selected, 'cat_cam')">
+                <img id="cat_tic" src="assets/categories/tickets.png" alt="Attractions category button" title="Attractions" onclick="changeCategory(icons.tickets, icons.cat_tickets_selected, 'cat_tic')">
+                <img id="cat_oak" src="assets/categories/oak-tree.png" alt="Parks category button" title="Parks" onclick="changeCategory(icons.oak, icons.cat_oak_selected, 'cat_oak')">
             </div>
             <button class="see_more_button">See more</button>
             

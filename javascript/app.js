@@ -8,11 +8,28 @@ var users = ['@Lina', '@Wenzheng', '@Irina', '@Michael', '@Eric', '@Ashley', '@H
 
 var icon_base = 'assets/categories/';
 var icons = {
-    bar: icon_base + 'bar_pin.png',
-    hotel: icon_base + 'hotel_pin.png',
-    oak: icon_base + 'oak-tree_pin.png',
-    restaurant: icon_base + 'restaurant_pin.png',
-    tickets: icon_base + 'tickets_pin.png'
+    bar: icon_base + 'bar_pin_v2.png',
+    hotel: icon_base + 'hotel_pin_v2.png',
+    oak: icon_base + 'oak-tree_pin_v2.png',
+    restaurant: icon_base + 'restaurant_pin_v2.png',
+    tickets: icon_base + 'tickets_pin_v2.png',
+	camera: icon_base + 'camera_pin_v2.png',
+	
+	cat_all: icon_base + 'all.png',
+	cat_bar: icon_base + 'bar.png',
+	cat_hotel: icon_base + 'hotel.png',
+	cat_oak: icon_base + 'oak-tree.png',
+	cat_restaurant: icon_base + 'restaurant.png',
+	cat_tickets: icon_base + 'tickets.png',
+	cat_camera: icon_base + 'camera.png',
+	
+	cat_all_selected: icon_base + 'all_selected.png',
+	cat_bar_selected: icon_base + 'bar_selected.png',
+	cat_hotel_selected: icon_base + 'hotel_selected.png',
+	cat_oak_selected: icon_base + 'oak-tree_selected.png',
+	cat_restaurant_selected: icon_base + 'restaurant_selected.png',
+	cat_tickets_selected: icon_base + 'tickets_selected.png',
+	cat_camera_selected: icon_base + 'camera_selected.png'
 };
 var locations = {
     Biscuit_Bitch: {
@@ -48,7 +65,7 @@ var locations = {
 	Pike_Place_Market: {
 		address: "Between Pike and Pine sts. at First Ave., Seattle, WA 98101",
 		lat_lng: {lat: 0, lng: 0},
-		icon: icons.oak
+		icon: icons.camera
 	}
 };
 
@@ -140,9 +157,7 @@ function initAutocomplete() {
 	map.addListener('tilesloaded', function() {
 		for(var key in locations) {
 			var loc = locations[key];
-			if(map.getBounds().contains(loc.lat_lng)) {
-				addMarker(loc.lat_lng, loc.icon);
-        	}
+			addMarker(loc.lat_lng, loc.icon);
     	}
 		markers.forEach(addClickListener);
 	});
@@ -152,12 +167,12 @@ function initAutocomplete() {
         searchBox.setBounds(map.getBounds());
         google.maps.event.trigger(map, 'resize');
         
-        for(var key in locations) {
-			var loc = locations[key];
-			if(map.getBounds().contains(loc.lat_lng)) {
-				addMarker(loc.lat_lng, loc.icon);
-        	}
-    	}
+//       for(var key in locations) {
+//			var loc = locations[key];
+//			if(map.getBounds().contains(loc.lat_lng)) {
+//				addMarker(loc.lat_lng, loc.icon);
+//        	}
+//    	}
 		markers.forEach(addClickListener);
     });
     
@@ -226,4 +241,29 @@ function addClickListener(marker) {
 
 function closeModal() {
 	document.getElementById("modal").style.display="none";
+}
+
+function changeCategory(category, selected, id) {
+	document.getElementById("cat_all").src = icons.cat_all;
+	document.getElementById("cat_res").src = icons.cat_restaurant;
+	document.getElementById("cat_bar").src = icons.cat_bar;
+	document.getElementById("cat_cam").src = icons.cat_camera;
+	document.getElementById("cat_tic").src = icons.cat_tickets;
+	document.getElementById("cat_oak").src = icons.cat_oak;
+	
+	markers.forEach(removeMarkers);
+	if(category == 'all') {
+		for(var key in locations) {
+			var loc = locations[key];
+			addMarker(loc.lat_lng, loc.icon);
+		}
+	} else {
+		for(var key in locations) {
+			var loc = locations[key];
+			if(loc.icon == category) {
+				addMarker(loc.lat_lng, loc.icon);
+				document.getElementById(id).src = selected;
+			}
+		}
+	}
 }
