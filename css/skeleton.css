@@ -713,6 +713,11 @@ h3 {
     float: none;
 }
 
+#cat-modal-content {
+    width: 50%;
+    margin: 20px auto;
+}
+
 #modal-container-1 {
     padding: 10px;
     text-align: center;
