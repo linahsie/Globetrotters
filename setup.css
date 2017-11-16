@@ -72,7 +72,7 @@ html, body{
     transform: scale3d(1, 1, 1);
 }
 
-.active > after{
+.li > .a > .after{
      content: '';
      position: absolute;
      bottom: 0;
