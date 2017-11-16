@@ -1,10 +1,10 @@
 // Variables
 var markers = [];
 var results = [];
+var owner = {'1648141780196322489_6419152996':'maurahong', "1648203274850261973_6419152996":"siettafe", "1648205996408348201_6419152996":"meetvirginiablog", "1648207492566790906_6419152996":"_meenz_", "1648142329398496137_6419152996":"morgan_lilian", "1648142964357440401_6419152996":"blairsheets", "1648143607554019750_6419152996":"iya_112","1648143875813406561_6419152996":"emilywilliams7207", "1648144910229243633_6419152996":"ihellodao", "1648145274085184512_6419152996":"soeunp88", "1648145728210784819_6419152996":"raque_l", "1648146078569424576_6419152996": "adinapreston","1648146491154638543_6419152996":"swisskissberner", "1648146859104337560_6419152996":"llpz44"};
 var map;
 var geocoder;
 var initializedPostsUser = false;
-var users = ['@Lina', '@Wenzheng', '@Irina', '@Michael', '@Eric', '@Ashley', '@Homing', '@Geon', '@Jiho', '@Kush'];
 
 var icon_base = 'assets/categories/';
 var icons = {
@@ -77,7 +77,7 @@ $( document ).ready(function () {
         tagName: 'awesome',
         accessToken: '6419152996.166bd80.3f5e1392db904047832daf97129569e4',
         userId:'6419152996',
-        template: '<div class="post"><p class="owner"></p> <div onclick="changeStarColor(this)" class = "like_container"> <p id="star" > &#9733;</p> <p id="add" >Add to favorite</p> </div> <div class="post_content"> <div class="post_info"> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a></div> </div>',
+        template: '<div class="post"><p id ={{id}} class="owner"></p> <div onclick="changeStarColor(this)" class = "like_container"> <p id="star" > &#9733;</p> <p id="add" >Add to favorite</p> </div> <div class="post_content"> <div class="post_info"> <p>{{caption}}</p> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span> </div> <a href="{{link}}"> <img src="{{image}}" alt="" class="img-responsive"> </a></div> </div>',
         resolution: 'standard_resolution'
     });
     feed.run();
@@ -88,10 +88,8 @@ function initializePostsOwner() {
         return;
     initializedPostsUser = true;
     var posts = document.getElementsByClassName("owner");
-    console.log(posts.length);
-    for (i = 0; i < posts.length; i++) {
-        console.log(posts[i].innerHTML);
-        posts[i].innerHTML = users[Math.floor(Math.random()*users.length)];
+    for (var i = 0; i < posts.length; i++) {
+        posts[i].innerHTML = "@" + owner[posts[i].id];
     }
 }
 
