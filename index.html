@@ -106,10 +106,10 @@
 
     <!-- post modal -->
     <div id="post_modal" class="modal">
-        <div class="post-modal-content">
+        <div class="post-modal-content" style="display:table;">
             <button id="close_modal_button" class="close_modal_button" onclick="closeModal('post_modal')">X</button>
             <img id = "post_img_large" src="">
-            <p class="post_caption" id = "post_caption" align="center">123456</p>
+            <p style="display:table-caption;caption-side:bottom;" class="post_caption" id = "post_caption" align="center" ></p>
         </div>
     </div>
     
@@ -127,8 +127,9 @@
 			<button class="close_modal"  onclick="closeModal('pin-modal')">close</button>
             <div class="none"/>
             <div id="modal-container-1">
-                <h3>Location name</h3>
-                <p>Location address</p>
+				<img id="location_category" src="assets/categories/all.png">
+                <h3 id="location_name">Location name</h3>
+                <p id="location_address">Location address</p>
             </div>
             <div id="modal-container-2">
                 hello
