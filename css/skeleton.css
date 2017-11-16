@@ -717,11 +717,6 @@ h3 {
     background-color: rgba(0,0,0,0.4);
 }
 
-.cat-modal-content {
-    height: 50vh;
-    margin: 100px;
-}
-
 .post_caption{
     background-color: black;
     color: white;
