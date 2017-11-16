@@ -1,31 +1,4 @@
-html, body{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Lato',sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    height: 100%;
-    color: #fff;
-    background: #fbfbfb;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
-}
-
-.table{
-    width: 100%;
-    height: 100%;
-    background: #34495e;
-    display: table;
-}
-
-.cell{
-    display: table-cell;
-    vertical-align: middle;
-    margin: auto;
-    text-align: center;
-}
-.dots {
+.dotstyle ul {
     position: relative;
     display: inline-block;
     margin: 0;
@@ -34,83 +7,97 @@ html, body{
     cursor: default;
 }
 
-.active > a {
-    -webkit-transform: scale3d(1.3, 1.3, 1.3);
-    transform: scale3d(1.3, 1.3, 1.3);
-}
-
-.active:after {
-    height: 100%;
-}
-
-.active > li {
+.dotstyle li {
     position: relative;
     display: block;
     float: left;
     margin: 0 16px;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
 }
 
-.active > a {
+.dotstyle li a {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     outline: none;
     border-radius: 50%;
+    background-color: #FFFFFF;
+    background-color: rgba(255,255,255,0.3);
     text-indent: -999em;
-    cursor: pointer;
+    cursor: pointer; /* make the text accessible to screen readers */
     position: absolute;
+}
+
+.dotstyle-fillup li a {
     overflow: hidden;
-    background-color: transparent;
-    box-shadow: inset 0 0 0 2px white;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    background-color: rgba(0,0,0,0);
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,1);
+    transition: background 0.3s;
 }
 
-.li > .a > .after{
-     content: '';
-     position: absolute;
-     bottom: 0;
-     height: 0;
-     left: 0;
-     width: 100%;
-     background-color: #fff;
-     box-shadow: 0 0 1px #fff;
-     -webkit-transition: height 0.3s ease;
-     transition: height 0.3s ease;
+.dotstyle-fillup li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 0 1px #fff;
+    transition: height 0.3s;
 }
 
-/*
-* Font Face: Lato
-*/
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 100;
-    src: local('Lato Hairline'), local('Lato-Hairline'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
-}
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+.dotstyle-fillup li a:hover,
+.dotstyle-fillup li a:focus {
+    background-color: rgba(0,0,0,0.2);
 }
 
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+.dotstyle-fillup li.current a::after {
+    height: 100%;
 }
 
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+.dotstyle-drawcircle li {
+    width: 18px;
+    height: 18px;
+}
+
+.dotstyle-drawcircle li a {
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    background-color: #c44d48;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+.dotstyle-drawcircle li svg {
+    z-index: 10;
+}
+
+.dotstyle-drawcircle li svg circle {
+    opacity: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 39 39;
+    stroke-dashoffset: 39; /* ~ length of circle path (pi*2r) */
+    transition: stroke-dashoffset 0.3s, opacity 0.3s;
+}
+
+.dotstyle-drawcircle li.current a,
+.dotstyle-drawcircle li a:hover,
+.dotstyle-drawcircle li a:focus {
+    opacity: 0.5;
+}
+
+.dotstyle-drawcircle li.current svg circle {
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.3s, opacity 0.15s;
 }
