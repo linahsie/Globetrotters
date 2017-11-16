@@ -538,6 +538,7 @@ h3 {
   padding: 0 10px;
   background-color: white;
   height: auto;
+  z-index: -100;
   width: 100%;
   float: left;
 }
@@ -590,35 +591,44 @@ h3 {
 }
 
 .post_content:hover img.img-responsive{
-  -webkit-filter: opacity(30%);
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  opacity: 0.3;
+  transition: 1s;
 }
 
 .post_content:hover .post_info{
-  -webkit-filter: opacity(100%);
-  opacity: 1;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  visibility: visible;
+  z-index: 100;
+  transition: 3s;
 }
 
 .post_info {
-  opacity: 0;
+  visibility: hidden;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   text-align: center;
+  height: 80%;
+}
+.post_info p{
+  height: 80%;
+  overflow: auto;
+  margin: 0;
 }
 
 .likes, .comments{
   margin: 0 5px !important;
+  position:relative;
+  bottom:0;
+  float:left;
+}
+
+#comment_like{
+  position: relative;
+  height:auto;
+  width:auto;
+  left:50%;
+  transform: translate(-25%);
 }
 
 .owner {
@@ -746,15 +756,27 @@ h3 {
     width: 350px;
 }
 
-#instafeed{
-  line-height: 1.5;
-  -webkit-column-count: 2;
-  -webkit-column-gap:   5px;
-  -moz-column-count:    2;
-  -moz-column-gap:      5px;
-  column-count:         2;
-  column-gap:           5px;
+@media (min-width: 1450px) {
+  #instafeed {
+    line-height: 1.5;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 5px;
+    -moz-column-count: 2;
+    -moz-column-gap: 5px;
+    column-count: 2;
+    column-gap: 5px;
+  }
 }
-
+@media (max-width: 1450px) {
+  #instafeed{
+    line-height: 1.5;
+    -webkit-column-count: 1;
+    -webkit-column-gap:   5px;
+    -moz-column-count:    1;
+    -moz-column-gap:      5px;
+    column-count:         1;
+    column-gap:           5px;
+  }
+}
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
