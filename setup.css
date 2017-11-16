@@ -25,26 +25,25 @@ html, body{
     margin: auto;
     text-align: center;
 }
-.dots{
+.dots {
     position: relative;
     display: inline-block;
     margin: 0;
     padding: 0;
     list-style: none;
     cursor: default;
+}
 
-.active{
-a{
+.active > a {
     -webkit-transform: scale3d(1.3, 1.3, 1.3);
     transform: scale3d(1.3, 1.3, 1.3);
-
-&:after{
-     height: 100%;
- }
-}
 }
 
-li{
+.active:after {
+    height: 100%;
+}
+
+.active > li {
     position: relative;
     display: block;
     float: left;
@@ -52,8 +51,9 @@ li{
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
 
-a{
+.active > a {
     top: 0;
     left: 0;
     width: 100%;
@@ -70,8 +70,9 @@ a{
     transition: all 0.3s ease;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+}
 
-&:after{
+.active > after{
      content: '';
      position: absolute;
      bottom: 0;
@@ -82,9 +83,6 @@ a{
      box-shadow: 0 0 1px #fff;
      -webkit-transition: height 0.3s ease;
      transition: height 0.3s ease;
- }
-}
-}
 }
 
 /*
