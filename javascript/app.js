@@ -163,7 +163,7 @@ function initAutocomplete() {
 	});
 	
     map.addListener('bounds_changed', function() {
-        markers.forEach(removeMarkers);
+        //markers.forEach(removeMarkers);
         searchBox.setBounds(map.getBounds());
         google.maps.event.trigger(map, 'resize');
         
@@ -239,8 +239,8 @@ function addClickListener(marker) {
 	});
 }
 
-function closeModal() {
-	document.getElementById("modal").style.display="none";
+function closeModal(id) {
+	document.getElementById(id).style.display="none";
 }
 
 function changeCategory(category, selected, id) {
@@ -256,6 +256,7 @@ function changeCategory(category, selected, id) {
 		for(var key in locations) {
 			var loc = locations[key];
 			addMarker(loc.lat_lng, loc.icon);
+			document.getElementById(id).src = selected;
 		}
 	} else {
 		for(var key in locations) {
@@ -266,4 +267,8 @@ function changeCategory(category, selected, id) {
 			}
 		}
 	}
+}
+
+function catSeeMore() {
+	document.getElementById("cat_modal").style.display = "block";
 }

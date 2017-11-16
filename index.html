@@ -72,7 +72,7 @@
                 <img id="cat_tic" src="assets/categories/tickets.png" alt="Attractions category button" title="Attractions" onclick="changeCategory(icons.tickets, icons.cat_tickets_selected, 'cat_tic')">
                 <img id="cat_oak" src="assets/categories/oak-tree.png" alt="Parks category button" title="Parks" onclick="changeCategory(icons.oak, icons.cat_oak_selected, 'cat_oak')">
             </div>
-            <button class="see_more_button">See more</button>
+            <button class="see_more_button" onclick="catSeeMore(event)">See more</button>
             
         </div>
 
@@ -101,7 +101,7 @@
 	
 	<div id="modal" class="modal">
 		<div class="modal-content">
-			<button id="close_modal" onclick="closeModal(event)">close</button>
+			<button id="close_modal" onclick="closeModal('modal')">close</button>
             <div class="none"/>
             <div id="modal-container-1">
                 <h3>Location name</h3>
