@@ -451,6 +451,11 @@ h3 {
     background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
 }
 
+#facebook_search_bar {
+  background-color: #3B5998;
+  /*background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);*/
+}
+
 #view-sidebar {
     position: absolute;
     width: 50px;
@@ -474,14 +479,30 @@ h3 {
     text-align: center;
 }
 
+#facebook_logo_container{
+  padding-bottom: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
 #instagram_text_logo{
     width: 35%;
     z-index: 10;
 }
 
+#facebook_text_logo{
+  width: 35%;
+  z-index: 10;
+}
+
 #instagram_logo {
     width: 35px;
     margin-right: 5px;
+}
+
+#facebook_logo {
+  width: 35px;
+  margin-right: 5px;
 }
 
 #location_summary{
@@ -495,8 +516,16 @@ h3 {
 #friend_summary{
   padding: 0 10px;
   background-color: white;
-  width: 100%;
+  width: 100% ;
   float: left;
+  border-bottom: 2px solid #E8E9EA;
+}
+
+#friend_summary_facebook{
+  padding-left:10px;
+  padding-right: 2px;
+  background-color: white;
+  width: 100% ;
   border-bottom: 2px solid #E8E9EA;
 }
 
@@ -509,6 +538,8 @@ h3 {
   width: 50px;
   margin-right: 5px;
 }
+
+#border{ border-bottom: 2px solid #E8E9EA; }
 
 #categories{
   padding: 0 10px;
@@ -532,6 +563,31 @@ h3 {
     margin-left: 10px;
     margin-top: 5px;
     padding: 10px 20px !important;
+}
+
+.see_more_button_facebook {
+  margin-left: 10px;
+  margin-top: 5px;
+  float:right;
+}
+
+.see_more_button_facebook_small{
+  margin-left: 5px;
+  margin-top: 5px;
+  float:right;
+}
+
+.tab{
+ /* background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  width:10px;
+  padding-left: 10px;
+  width: auto;
+  height: inherit;
+  align:left */
 }
 
 #post_content{
@@ -778,5 +834,30 @@ h3 {
     column-gap:           5px;
   }
 }
+/*
+.tab{
+  width: 25%;
+  margin: 20px auto;
+  height: 30px;
+
+}
+
+tab1 { padding-left: 4em; }
+tab2 { padding-left: 8em; }
+tab3 { padding-left: 12em; }
+tab4 { padding-left: 16em; }
+tab5 { padding-left: 20em; }
+tab6 { padding-left: 24em; }
+tab7 { padding-left: 28em; }
+tab8 { padding-left: 32em; }
+tab9 { padding-left: 36em; }
+tab10 { padding-left: 40em; }
+tab11 { padding-left: 44em; }
+tab12 { padding-left: 48em; }
+tab13 { padding-left: 52em; }
+tab14 { padding-left: 56em; }
+tab15 { padding-left: 60em; }
+tab16 { padding-left: 64em; }
+*/
 /* Posts Ends
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

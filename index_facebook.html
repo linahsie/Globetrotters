@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Globetrotter</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Bootstrap and Font Awesome css -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="javascript/jquery-1.11.0.min.js"></script>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+<script type="text/javascript" src="javascript/app_fb.js"></script>
+<script type="text/javascript" src="javascript/instafeed.min.js"></script>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <button id="sidebar_button" onclick="close_sidebar(event)">☰</button>
+
+    <!-- sidebar div -->
+    <div id="sidebar">
+        <div id="facebook_search_bar">
+            <input id="search" class="controls" type="text" placeholder="Search.." onchange="updateView(this.value)">
+
+            <div id="facebook_logo_container">
+                <img id="facebook_logo" src="assets/facebook_icon1.png" alt="Facebook logo">
+                <img src="assets/facebook_logo.png" id="facebook_text_logo" alt="Facebook text logo">
+            </div>
+        </div>
+
+        <div id="location_summary">
+            <h3 id="location">Seattle WA, USA</h3>
+        </div>
+
+        <div id="friend_summary_facebook"> <!-- friend summary facebook -->
+            <div class="container"> <!-- "Your Friends" and Filter container -->
+                <div class="col-md-6" style="left: -30px;">
+                    <h3 style="color:#3b5998">Your Friends</h3>
+                </div>
+                <div class="col-md-6" style="align:right;">
+                    <button class="see_more_button_facebook"><img src="assets/filter.png" class="img_in_button">Filter</button>
+                </div>
+            </div>
+            <div class="container"> <!-- "Your Friends" and Filter container -->
+                <div class="col-md-8" style="align:left;left: -15px; padding-bottom: 5px">
+                    <div style="margin-bottom: 8px;"> <span style="color:#8b9dc3;"> 5 </span> friends live here  </div>
+                        <img src="assets/users/person1.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/users/person2.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/users/person3.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/users/person4.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/users/person5.png" style="max-width: 30px; max-height: 30px">
+                </div>
+                <div class="col-md-4" style="padding-top: 12px" >
+                    <button class="see_more_button_facebook_small">See more</button>
+                </div>
+                <div> <!-- "Your Friends" and Filter container -->
+                    <div class="col-lg-8" style="align:left; left: -15px; padding-bottom: 5px">
+                        <div style="margin-bottom: 8px;"> <span style="color:#8b9dc3">17</span> friends have been here </div>
+                        <img src="assets/users/person6.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/users/person7.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/users/person8.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/users/person9.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/users/person10.png" style="max-width: 30px; max-height: 30px">
+                        <img src="assets/categories/dotdotdot.png" style="max-width: 30px; max-height: 30px">
+                    </div>
+                    <div class="col-md-4" style="padding-top: 12px; align:left">
+                    <button class="see_more_button_facebook_small">See more</button>
+                </div>
+                </div>
+            </div>
+        </div> <!-- End of "Your Friends" and Filter container -->
+
+
+
+        <div id="categories">
+        <h3 style="color:#3b5998">Categories</h3>
+        <div>
+            <img id="cat_all" src="assets/categories/fb/all_selected.png" alt="All category button" title="All" onclick="changeCategory('all', icons.cat_all_selected, 'cat_all')" >
+            <img id="cat_res" src="assets/categories/fb/restaurant.png" alt="Restaurants category button" title="Restaurants" onclick="changeCategory(icons.restaurant, icons.cat_restaurant_selected, 'cat_res')">
+            <img id="cat_bar" src="assets/categories/fb/bar.png" alt="Bars category button" title="Bars" onclick="changeCategory(icons.bar, icons.cat_bar_selected, 'cat_bar')">
+            <img id="cat_cam" src="assets/categories/fb/camera.png" alt="Camera category button" title="Points of Interest" onclick="changeCategory(icons.camera, icons.cat_camera_selected, 'cat_cam')">
+            <img id="cat_tic" src="assets/categories/fb/tickets.png" alt="Attractions category button" title="Attractions" onclick="changeCategory(icons.tickets, icons.cat_tickets_selected, 'cat_tic')">
+            <img id="cat_oak" src="assets/categories/fb/oak-tree.png" alt="Parks category button" title="Parks" onclick="changeCategory(icons.oak, icons.cat_oak_selected, 'cat_oak')">
+        </div>
+        <button class="see_more_button" onclick="catSeeMore()">See more</button>
+
+    </div>
+
+    <div id="post_content" >
+        <h3 style="color:#3b5998">Posts</h3>
+
+       <div style="width : 100%"  class="container">
+            <div class="col-sm-2" style="background-color: #f7f7f7; height: 35px; text-align: center; vertical-align: middle; border-top-color: #8b9dc3; border-left-color: #dfe3ee; border-right-color: #dfe3ee; border-bottom-color: #ffffff;">
+                <p class="tab" style="padding-top: 5px; border-top-color: #8b9dc3; vertical-align: middle; border-left-color: #dfe3ee; border-right-color: #dfe3ee; border-bottom-color: #ffffff; background-color: #f7f7f7; font-size: larger;" >All</p>
+            </div>
+
+           <div class="col-sm-3" style="padding-top: 5px;  background-color: #dfe3ee; height: 35px; text-align: center; vertical-align: middle;">
+               <p class="tab" style="border-color: #dfe3ee; vertical-align: middle; background-color: #dfe3ee; align-self: left; font-size: larger" >Check-In's<p>
+           </div>
+           <a>
+           <div class="col-sm-3" style="padding-top: 5px;  background-color: #8b9dc3; height: 35px; text-align: center; vertical-align: middle;">
+               <p style="border-color: #8b9dc3; vertical-align: middle; background-color: #8b9dc3; align-self: center; font-size: larger; color: #3b5998" >Photos</p>
+           </div>
+           </a>
+           <div class="col-sm-4" style=" padding-top: 5px; background-color: #3b5998;  height: 35px; text-align: center; vertical-align: middle; ">
+               <p class="tab" style="border-color: #3b5998; vertical-align: middle; color:white;  align-self: center; width: auto; height: inherit; font-size: larger" >Statuses</p>
+           </div>
+        </div>
+    </div>
+
+        <div id="post_content">
+
+        <div onmouseover="initializePostsOwner()" id="content">
+            <div class="post_container">
+                <div id="instafeed"> </div>
+            </div>
+        </div>
+        </div>
+
+ </div>
+ <!-- end of sidebar div -->
+
+    <!-- view-sidebar div -->
+<div id="view-sidebar">
+    <a href="index.html">
+        <img src="https://png.icons8.com/instagram/color/40/000000" alt="Instagram view button">
+    </a>
+    <a href="index_facebook.html">
+        <img src="https://png.icons8.com/facebook/color/40/000000" alt="Facebook view button">
+    </a>
+    <img src="https://png.icons8.com/google/color/40/000000" alt="Google view button">
+    <img src="https://png.icons8.com/star-filled/color/40/000000" alt="Favorite view button">
+</div>
+    <!-- end of view-sidebar div> -->
+
+    <div id="map">
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU2_MvYmzRaTirG2mIsGTTT4Mz-E_cIA&libraries=places&callback=initAutocomplete" async defer></script>
+    </div>
+
+    <!-- post modal -->
+    <div id="post_modal" class="modal">
+        <div class="post-modal-content" style="display:table;">
+            <button id="close_modal_button" class="close_modal_button" onclick="closeModal('post_modal')">X</button>
+            <img id = "post_img_large" src="">
+            <p style="display:table-caption;caption-side:bottom;" class="post_caption" id = "post_caption" align="center" ></p>
+        </div>
+    </div>
+    
+    <!-- categories modal -->
+	<div id="cat_modal" class="modal">
+		<div class="modal-content" id="cat-modal-content">
+			<button class="close_modal" onclick="closeModal('cat_modal')">close</button>
+			<p>test</p>
+		</div>
+	</div>
+
+    <!-- pins modal with tripadvisor-->
+	<div id="pin-modal" class="modal">
+		<div class="modal-content">
+			<button class="close_modal"  onclick="closeModal('pin-modal')">close</button>
+            <div class="none"/>
+            <div id="modal-container-1">
+				<img id="location_category" src="assets/categories/all.png">
+                <h3 id="location_name">Location name</h3>
+                <p id="location_address">Location address</p>
+            </div>
+            <div id="modal-container-2">
+                hello
+            </div>
+            <div id="modal-container-3">
+                <img src="https://developer-tripadvisor.s3.amazonaws.com/uploads/tripadvisor-horz-rgb_newcolor_(1)_(1).svg" alt="TripAdvisor logo" id="tripadvisor-logo">
+            </div>
+		</div>
+	</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+</body>
+</html>
