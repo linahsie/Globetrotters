@@ -808,6 +808,11 @@ h3 {
     border-left: 2px solid #e8e9ea
 }
 
+#cat-modal-container {
+	padding-top: 30px;
+	padding-left: 20px;
+}
+
 #tripadvisor-logo {
     width: 350px;
 }

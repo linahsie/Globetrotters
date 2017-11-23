@@ -67,12 +67,12 @@
         <div id="categories">
             <h3 style="color:#8a3ab9">Categories</h3>
             <div>
-                <img id="cat_all" src="assets/categories/all_selected.png" alt="All category button" title="All" onclick="changeCategory('all', icons.cat_all_selected, 'cat_all')" >
-                <img id="cat_res" src="assets/categories/restaurant.png" alt="Restaurants category button" title="Restaurants" onclick="changeCategory(icons.restaurant, icons.cat_restaurant_selected, 'cat_res')">
-                <img id="cat_bar" src="assets/categories/bar.png" alt="Bars category button" title="Bars" onclick="changeCategory(icons.bar, icons.cat_bar_selected, 'cat_bar')">
-                <img id="cat_cam" src="assets/categories/camera.png" alt="Camera category button" title="Points of Interest" onclick="changeCategory(icons.camera, icons.cat_camera_selected, 'cat_cam')">
-                <img id="cat_tic" src="assets/categories/tickets.png" alt="Attractions category button" title="Attractions" onclick="changeCategory(icons.tickets, icons.cat_tickets_selected, 'cat_tic')">
-                <img id="cat_oak" src="assets/categories/oak-tree.png" alt="Parks category button" title="Parks" onclick="changeCategory(icons.oak, icons.cat_oak_selected, 'cat_oak')">
+                <img id="cat_all" src="assets/categories/all.png" alt="All category button" title="All" onclick="changeCategory('all', 'cat_all')" >
+                <img id="cat1" src="assets/categories/restaurant.png" alt="Restaurants category button" title="Restaurants" onclick="changeCategory(categories[1], 'cat1')">
+                <img id="cat2" src="assets/categories/bar.png" alt="Bars category button" title="Bars" onclick="changeCategory(categories[2], 'cat2')">
+                <img id="cat3" src="assets/categories/camera.png" alt="Camera category button" title="Points of Interest" onclick="changeCategory(categories[3], 'cat3')">
+                <img id="cat4" src="assets/categories/tickets.png" alt="Attractions category button" title="Attractions" onclick="changeCategory(categories[4], 'cat4')">
+                <img id="cat5" src="assets/categories/oak-tree.png" alt="Parks category button" title="Parks" onclick="changeCategory(categories[5], 'cat5')">
             </div>
             <button class="see_more_button" onclick="catSeeMore()">See more</button>
             
@@ -120,8 +120,18 @@
     <!-- categories modal -->
 	<div id="cat_modal" class="modal">
 		<div class="modal-content" id="cat-modal-content">
-			<button class="close_modal" onclick="closeModal('cat_modal')">close</button>
-			<p>test</p>
+			<button class="close_modal" onclick="closeCatModal('cat_modal')">close</button>
+			<div id="cat-modal-container">
+				<h3 id="cat-error">Choose 5 categories.</h3>
+				<h2>Your Categories</h2>
+				<img id="sel_res" src="assets/categories/restaurant_check.png" onclick="selectCategory(category_selection.restaurant)">
+				<img id="sel_bar" src="assets/categories/bar_check.png" onclick="selectCategory(category_selection.bar)">
+				<img id="sel_cam" src="assets/categories/camera_check.png" onclick="selectCategory(category_selection.camera)">
+				<img id="sel_tic" src="assets/categories/tickets_check.png" onclick="selectCategory(category_selection.tickets)">
+				<img id="sel_oak" src="assets/categories/oak-tree_check.png" onclick="selectCategory(category_selection.oak)">
+				<h2>Other Categories</h2>
+				<img id="sel_hot" src="assets/categories/hotel_gray.png" onclick="selectCategory(category_selection.hotel)">
+			</div>
 		</div>
 	</div>
 

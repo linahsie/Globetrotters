@@ -29,7 +29,21 @@ var icons = {
 	cat_oak_selected: icon_base + 'oak-tree_selected.png',
 	cat_restaurant_selected: icon_base + 'restaurant_selected.png',
 	cat_tickets_selected: icon_base + 'tickets_selected.png',
-	cat_camera_selected: icon_base + 'camera_selected.png'
+	cat_camera_selected: icon_base + 'camera_selected.png',
+	
+	cat_bar_check: icon_base + 'bar_check.png',
+	cat_hotel_check: icon_base + 'hotel_check.png',
+	cat_oak_check: icon_base + 'oak-tree_check.png',
+	cat_restaurant_check: icon_base + 'restaurant_check.png',
+	cat_tickets_check: icon_base + 'tickets_check.png',
+	cat_camera_check: icon_base + 'camera_check.png',
+	
+	cat_bar_gray: icon_base + 'bar_gray.png',
+	cat_hotel_gray: icon_base + 'hotel_gray.png',
+	cat_oak_gray: icon_base + 'oak-tree_gray.png',
+	cat_restaurant_gray: icon_base + 'restaurant_gray.png',
+	cat_tickets_gray: icon_base + 'tickets_gray.png',
+	cat_camera_gray: icon_base + 'camera_gray.png'
 };
 var locations = {
     Biscuit_Bitch: {
@@ -80,6 +94,90 @@ var locations = {
 		lat_lng: {lat: 0, lng: 0},
 		icon: icons.camera,
 		category: icons.cat_camera
+	}
+};
+var num_selected = 5;
+var category_selection = {
+	restaurant: {
+		id: "sel_res",
+		selected: true,
+		icon: icons.cat_restaurant,
+		icon_check: icons.cat_restaurant_check,
+		icon_gray: icons.cat_restaurant_gray,
+		icon_selected: icons.cat_restaurant_selected,
+		pin: icons.restaurant
+	},
+	bar: {
+		id: "sel_bar",
+		selected: true,
+		icon: icons.cat_bar,
+		icon_check: icons.cat_bar_check,
+		icon_gray: icons.cat_bar_gray,
+		icon_selected: icons.cat_bar_selected,
+		pin: icons.bar
+	},
+	camera: {
+		id: "sel_cam",
+		selected: true,
+		icon: icons.cat_camera,
+		icon_check: icons.cat_camera_check,
+		icon_gray: icons.cat_camera_gray,
+		icon_selected: icons.cat_camera_selected,
+		pin: icons.camera
+	},
+	tickets: {
+		id: "sel_tic",
+		selected: true,
+		icon: icons.cat_tickets,
+		icon_check: icons.cat_tickets_check,
+		icon_gray: icons.cat_tickets_gray,
+		icon_selected: icons.cat_tickets_selected,
+		pin: icons.tickets
+	},
+	oak: {
+		id: "sel_oak",
+		selected: true,
+		icon: icons.cat_oak,
+		icon_check: icons.cat_oak_check,
+		icon_gray: icons.cat_oak_gray,
+		icon_selected: icons.cat_oak_selected,
+		pin: icons.oak
+	},
+	hotel: {
+		id: "sel_hot",
+		selected: false,
+		icon: icons.cat_hotel,
+		icon_check: icons.cat_hotel_check,
+		icon_gray: icons.cat_hotel_gray,
+		icon_selected: icons.cat_hotel_selected,
+		pin: icons.hotel
+	}
+};
+var categories = {
+	1: {
+		icon: icons.cat_restaurant,
+		icon_selected: icons.cat_restaurant_selected,
+		pin: icons.restaurant
+	},
+	2: {
+		icon: icons.cat_bar,
+		icon_selected: icons.cat_bar_selected,
+		pin: icons.bar
+	},
+	3: {
+		icon: icons.cat_camera,
+		icon_selected: icons.cat_camera_selected,
+		pin: icons.camera
+	},
+	4: {
+		icon: icons.cat_tickets,
+		icon_selected: icons.cat_tickets_selected,
+		pin: icons.tickets
+	},
+	5: {
+		icon: icons.cat_oak,
+		icon_selected: icons.cat_oak_selected,
+		pin: icons.oak
 	}
 };
 
@@ -145,6 +243,7 @@ function updateView(value){
 
 // Map and Search box
 function initAutocomplete() {
+	//geocoding
 	geocoder = new google.maps.Geocoder();
     for(var key in locations) {
         var loc = locations[key];
@@ -161,19 +260,9 @@ function initAutocomplete() {
     var input = document.getElementById('search');
     var searchBox = new google.maps.places.SearchBox(input);
     //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-    
-    //geocoding
     	
     
     // Bias the SearchBox results towards current map's viewport.
-	map.addListener('tilesloaded', function() {
-		for(var key in locations) {
-			var loc = locations[key];
-			addMarker(loc);
-    	}
-		markers.forEach(addClickListener);
-	});
-	
     map.addListener('bounds_changed', function() {
         //markers.forEach(removeMarkers);
         searchBox.setBounds(map.getBounds());
@@ -185,7 +274,6 @@ function initAutocomplete() {
 //				addMarker(loc.lat_lng, loc.icon);
 //        	}
 //    	}
-		markers.forEach(addClickListener);
     });
     
     // Listen for the event fired when the user selects a prediction and retrieve
@@ -244,7 +332,6 @@ function geocodeAddress(location) {
 }
 
 function addClickListener(marker) {
-    console.log("addclicklistenermarker");
 	var modal = document.getElementById("pin-modal");
 	marker.addListener('click', function() {	
 		modal.style.display = "block";
@@ -272,27 +359,29 @@ function open_post_modal(target){
     document.getElementById('post_caption').innerHTML=caption;
 }
 
-function changeCategory(category, selected, id) {
+function changeCategory(category, id) {
 	document.getElementById("cat_all").src = icons.cat_all;
-	document.getElementById("cat_res").src = icons.cat_restaurant;
-	document.getElementById("cat_bar").src = icons.cat_bar;
-	document.getElementById("cat_cam").src = icons.cat_camera;
-	document.getElementById("cat_tic").src = icons.cat_tickets;
-	document.getElementById("cat_oak").src = icons.cat_oak;
+	document.getElementById("cat1").src = categories[1].icon;
+	document.getElementById("cat2").src = categories[2].icon;
+	document.getElementById("cat3").src = categories[3].icon;
+	document.getElementById("cat4").src = categories[4].icon;
+	document.getElementById("cat5").src = categories[5].icon;
 	
 	markers.forEach(removeMarkers);
 	if(category == 'all') {
 		for(var key in locations) {
 			var loc = locations[key];
-			addMarker(loc);
-			document.getElementById(id).src = selected;
+			if(loc.icon == categories[1].pin || loc.icon == categories[2].pin || loc.icon == categories[3].pin || loc.icon == categories[4].pin || loc.icon == categories[5].pin) {
+				addMarker(loc);
+			}
 		}
+		document.getElementById(id).src = icons.cat_all_selected;
 	} else {
 		for(var key in locations) {
 			var loc = locations[key];
-			if(loc.icon == category) {
+			if(loc.icon == category.pin) {
 				addMarker(loc);
-				document.getElementById(id).src = selected;
+				document.getElementById(id).src = category.icon_selected;
 			}
 		}
 	}
@@ -301,6 +390,57 @@ function changeCategory(category, selected, id) {
 }
 
 function catSeeMore() {
-    console.log("hi");
-    document.getElementById("cat_modal").style.display = "block";
+	document.getElementById("cat_modal").style.display = "block";
+}
+
+function selectCategory(category) {
+	if(!category.selected && num_selected == 5) {
+		document.getElementById("cat-error").innerHTML = "Cannot select more than 5 categories.";
+		document.getElementById("cat-error").style.color = "red";
+	} else if(category.selected) {
+		num_selected = num_selected - 1;
+		category.selected = false;
+		document.getElementById(category.id).src = category.icon;
+	} else if(!category.selected) {
+		num_selected = num_selected + 1;
+		category.selected = true;
+		document.getElementById(category.id).src = category.icon_check;
+	}
+	if(num_selected == 5) {
+		for(var key in category_selection) {
+			var cat = category_selection[key];
+			if(!cat.selected) {
+				document.getElementById(cat.id).src = cat.icon_gray;
+			}
+		}
+	} else {
+		for(var key in category_selection) {
+			var cat = category_selection[key];
+			if(!cat.selected) {
+				document.getElementById(cat.id).src = cat.icon;
+			}
+		}
+	}
+}
+
+function closeCatModal(id) {
+	if(num_selected == 5) {
+		document.getElementById("cat-error").style.color = "black";
+		document.getElementById("cat-error").innerHTML = "Choose 5 categories";
+		document.getElementById(id).style.display = "none";
+		count = 1;
+		for(var key in category_selection) {
+			var cat = category_selection[key];
+			if(cat.selected) {
+				categories[count].icon = cat.icon;
+				categories[count].icon_selected = cat.icon_selected;
+				categories[count].pin = cat.pin;
+				count++;
+			}
+		}
+		changeCategory('all', 'cat_all');
+	} else {
+		document.getElementById("cat-error").style.color = "red";
+		document.getElementById("cat-error").innerHTML = "Choose 5 categories.";
+	}
 }
