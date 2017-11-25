@@ -51,49 +51,84 @@ var locations = {
         address: "1909 1st Ave, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.restaurant,
-		category: icons.cat_restaurant
+		category: icons.cat_restaurant,
+		score: "assets/4.5 stars.png",
+		pic1: "https://media1.fdncms.com/stranger/imager/u/large/25014514/13895078_1273269562684182_2405888235649214765_n.jpg",
+		pic2: "https://s3-media1.fl.yelpcdn.com/bphoto/U9Qx1zpJvHKtS5NN51m0iQ/348s.jpg",
+		pic3: "http://www.yahglobal.com/images/business/details/biscuit-bitch-seattle.jpg",
+		pic4: "https://2.bp.blogspot.com/-SsXMr6-zHs4/VECE_xiTShI/AAAAAAAAY2U/6dlHOvEWVd4/s1600/101714maaf-biscuitbitchcaffelieto03.jpg"
     },
     Seattle_Art_Museum: {
 		name: "Seattle Art Museum",
         address: "1300 1st Ave, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.tickets,
-		category: icons.cat_tickets
+		category: icons.cat_tickets,
+		score: "assets/4.5 stars.png",
+		pic1: "http://www.seattleartmuseum.org/Assets%20About%20SAM/hammering-man.jpg",
+		pic2: "http://kusama.site.seattleartmuseum.org/wp-content/uploads/sites/16/2017/03/HMSG_Kusama_LoveForever_01_RGB_1080px.jpg",
+		pic3: "http://www.seattleartmuseum.org/Assets%20About%20SAM/seattle-art-museum.jpg",
+		pic4: "http://mediad.publicbroadcasting.net/p/kuow/files/styles/medium/public/201601/SAM-cars6_0.jpg"
     },
     The_Edgewater: {
 		name: "The Edgewater",
         address: "2411 Alaskan Way, Seattle, WA 98121",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.hotel,
-		category: icons.cat_hotel
+		category: icons.cat_hotel,
+		score: "assets/4 stars.png",
+		pic1: "http://www.theroamingboomers.com/wp-content/uploads/2011/07/Edgewater-Hotel-Seattle_588.jpg",
+		pic2: "http://www.edgewaterhotel.com/App_Data/MediaFiles/B/6/2/%7BB62DAF93-FF1B-46B6-8718-F6C0555F9EF7%7DTE_Lobby.jpg",
+		pic3: "https://images.trvl-media.com/hotels/1000000/20000/11200/11133/11133_149_z.jpg",
+		pic4: "https://cdn.wedding-spot.com/images/venues/3584/Edgewater-Hotel-Wedding-Seattle-WA-12_main.1431371856.png"
     },
     The_Nest: {
 		name: "The Nest",
         address: "110 Stewart St, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.bar,
-		category: icons.cat_bar
+		category: icons.cat_bar,
+		score: "assets/4.5 stars.png",
+		pic1: "https://thompsonprod.blob.core.windows.net/thompsonprod-container/2016/05/11135450/The_Nest.jpg",
+		pic2: "https://cdn.vox-cdn.com/thumbor/YCfyWVOFtAHWnZLGdXlR1ZdD80k=/0x600/cdn.vox-cdn.com/uploads/chorus_asset/file/6390175/015_-_Thompson_Seattle_The_Nest_Interior.0.jpg",
+		pic3: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg",
+		pic4: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg"
     },
     Volunteer_Park: {
 		name: "Volunteer Park",
         address: "1247 15th Ave E, Seattle, WA 98112",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.oak,
-		category: icons.cat_oak
+		category: icons.cat_oak,
+		score: "assets/4.5 stars.png",
+		pic1: "http://tanglewoodconservatories.com/wp-content/uploads/2014/05/volunteer_main.jpg",
+		pic2: "https://media1.fdncms.com/stranger/imager/u/original/24157597/shutterstock_103534460.jpg",
+		pic3: "https://www.theclio.com/web/ul/18759.36935.jpeg",
+		pic4: "https://amateurbotannist.files.wordpress.com/2011/07/25f09-img_1232.jpg"
     },
 	Palisade_Restaurant: {
 		name: "Palisade Restaurant",
 		address: "2601 W Marina Pl, Seattle, WA 98199-4331",
 		lat_lng: {lat: 0, lng: 0},
 		icon: icons.restaurant,
-		category: icons.cat_restaurant
+		category: icons.cat_restaurant,
+		score: "assets/4.5 stars.png",
+		pic1: "https://media-cdn.tripadvisor.com/media/photo-o/09/48/4b/b7/palisade.jpg",
+		pic2: "http://vp.cdn.cityvoterinc.com/GetImage.ashx?img=00/00/00/02/02/30/20230-2764220.jpg",
+		pic3: "https://img.grouponcdn.com/deal/nTYmBDEiS4h2HYMvUKthVT/Palisade_Food4-700x420/v1/c700x420.jpg",
+		pic4: "https://cdn.wedding-spot.com/images/venues/7485/Alani-Room-at-the-Palisade-Wedding-Seattle-WA-4_main.1453525170.jpg"
 	},
 	Pike_Place_Market: {
 		name: "Pike Place Market",
 		address: "Between Pike and Pine Sts. at First Ave., Seattle, WA 98101",
 		lat_lng: {lat: 0, lng: 0},
 		icon: icons.camera,
-		category: icons.cat_camera
+		category: icons.cat_camera,
+		score: "assets/4.5 stars.png",
+		pic1: "http://pikeplacemarket.org/sites/default/files/styles/page_image/public/plan-your-visit-header.jpg?itok=tcl-zP7-",
+		pic2: "https://cdn.vox-cdn.com/thumbor/VjrdnIjF9QTw5qjGR1KKFfi1EPg=/0x0:2000x1329/1200x900/filters:focal(654x260:974x580)/cdn.vox-cdn.com/uploads/chorus_image/image/55235639/eatersea0916_pike_place_market_shutterstock_mcarter.0.0.jpg",
+		pic3: "http://image.boomsbeat.com/data/images/full/28734/1-jpg.jpg",
+		pic4: "http://digitalphotoacademy.com/wp-content/uploads/sites/17/2016/12/pike-place-market-19.jpg"
 	}
 };
 var num_selected = 5;
@@ -334,15 +369,22 @@ function geocodeAddress(location) {
 function addClickListener(marker) {
 	var modal = document.getElementById("pin-modal");
 	marker.addListener('click', function() {	
-		modal.style.display = "block";
 		document.getElementById("location_name").innerHTML = marker.title;
 		for(var key in locations) {
 			var loc = locations[key];
 			if(loc.name == marker.title) {
 				document.getElementById("location_address").innerHTML = loc.address;
 				document.getElementById("location_category").src = loc.category;
+				document.getElementById("score").src = loc.score;
+				document.getElementById("pic1").src = loc.pic1;
+				document.getElementById("pic2").src = loc.pic2;
+				document.getElementById("pic3").src = loc.pic3;
+				document.getElementById("pic4").src = loc.pic4;
+				break;
 			}
 		}
+		
+		modal.style.display = "block";
 	});
 }
 
