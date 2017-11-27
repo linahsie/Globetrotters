@@ -50,21 +50,39 @@
         <button id="close_modal" style="right: 0; position: absolute;" onclick="closeModal('modal')">close</button>
         <div id="modal-container-1" style="border-bottom: none">
             <h1>Pick your favorite travel review service!</h1>
+            <hr>
             <div>
-                <img src="images/logo.jpg" style="max-height: 30%;max-width: 30%;">
-                <div class="dotstyle dotstyle-fillup">
-                    <ul>
-                        <li><a href="setup.html">Home</a></li>
-                        <li><a href="instasignin.html">Sign in Instagram</a></li>
-                        <li><a href="fbsignin.html">Sign in Facebook</a></li>
-                        <li class="current"><a href="travelreviewservice.html">Travel Review Service</a></li>
-                        <li><a href="categories.html">Top Categories</a></li>
-                        <li><a href="done.html">Done</a></li>
-                    </ul>
-                </div>
+                <label class="radiobutton">
+                    <img src="https://developer-tripadvisor.s3.amazonaws.com/uploads/tripadvisor-horz-rgb_newcolor_(1)_(1).svg" style="width:230px; height:30px;">
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radiobutton">
+                    <img src="assets/yelp_logo.png" style="max-width:150px; max-height: 40px;">
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="radiobutton">
+                    <img src="assets/google_logo.png" style="max-width:150px; max-height: 40px;">
+                    Google Reviews
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <hr>
+            <div class="dotstyle dotstyle-fillup">
+                <ul>
+                    <li><a href="setup.html">Home</a></li>
+                    <li><a href="instasignin.html">Sign in Instagram</a></li>
+                    <li><a href="fbsignin.html">Sign in Facebook</a></li>
+                    <li class="current"><a href="travelreviewservice.html">Travel Review Service</a></li>
+                    <li><a href="categories.html">Top Categories</a></li>
+                    <li><a href="done.html">Done</a></li>
+                </ul>
             </div>
         </div>
-        <button style="right: 10%; bottom: 5%; position: absolute";><a href="#">Next</a></button>
+        <button style="left: 10%; bottom: 5%; position: absolute;"><a href="fbsignin.html">Prev</a></button>
+        <button style="right: 10%; bottom: 5%; position: absolute;"><a href="categories.html">Next</a></button>
     </div>
 </div>
 
