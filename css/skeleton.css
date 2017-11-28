@@ -783,11 +783,6 @@ h3 {
     margin: 20px;
 }
 
-#cat-modal-content {
-    height: 55vh !important;
-    
-}
-
 .post-modal-content {
     position: absolute;
     top: 50%;
@@ -807,7 +802,7 @@ h3 {
 #cat-modal-content, #friend-modal-content{
     width: 50%;
     margin: 20px auto;
-    overflow: scroll;
+    height: 55vh !important;
 }
 
 #modal-container-1 {
