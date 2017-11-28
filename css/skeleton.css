@@ -783,11 +783,6 @@ h3 {
     margin: 20px;
 }
 
-#cat-modal-content {
-    height: 55vh !important;
-    
-}
-
 .post-modal-content {
     position: absolute;
     top: 50%;
@@ -810,30 +805,33 @@ h3 {
     overflow: scroll;
 }
 
+#details-modal-content {
+    height: 55vh !important;
+}
+
 #modal-container-1 {
     padding: 10px;
     text-align: center;
-    border-bottom: 2px solid #e8e9ea
+    border-bottom: 2px solid #e8e9ea;
 }
 
 #modal-container-2 {
     float: left;
     width: 40%;
-    overflow: scroll;
 }
 
 #modal-container-3 {
     float: left;
     width: 60%;
     padding: 20px;
-    border-left: 2px solid #e8e9ea
+    border-left: 2px solid #e8e9ea;
 }
 
 #instagram_bar_content {
   float: left;
   width: 100%;
   padding: 20px;
-  overflow: scroll;
+    overflow-y: scroll;
 }
 
 .pin_modal_post{
