@@ -767,6 +767,11 @@ h3 {
     margin: 20px;
 }
 
+#cat-modal-content {
+    height: 55vh !important;
+    
+}
+
 .post-modal-content {
     position: absolute;
     top: 50%;
