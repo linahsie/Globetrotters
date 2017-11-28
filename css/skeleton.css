@@ -519,7 +519,7 @@ h3 {
 }
 
 #friend_summary{
-  padding: 0 10px;
+  padding: 0 10px 10px 10px;
   background-color: white;
   width: 100% ;
   float: left;
@@ -530,6 +530,7 @@ h3 {
   width: 70px;
   height: 70px
 }
+
 #friend_summary_facebook{
   padding-left:10px;
   padding-right: 2px;
@@ -551,7 +552,7 @@ h3 {
 #border{ border-bottom: 2px solid #E8E9EA; }
 
 #categories{
-  padding: 0 10px;
+  padding: 0 10px 10px 10px;
   background-color: white;
   width: 100%;
   float: left;
