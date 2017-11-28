@@ -32,7 +32,6 @@ var icons = {
 	cat_camera_selected: icon_base + 'camera_selected.png'
 };
 
-
 var locations = {
     Biscuit_Bitch: {
 		name: "Biscuit Bitch",
@@ -106,7 +105,7 @@ function initializePostsOwner() {
     initializedPostsUser = true;
     var posts = document.getElementsByClassName("owner");
     for (var i = 0; i < posts.length; i++) {
-        posts[i].innerHTML = "@" + owner[posts[i].id];
+        posts[i].innerHTML = owner[posts[i].id];
     }
 }
 
