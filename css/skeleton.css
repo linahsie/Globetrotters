@@ -802,7 +802,8 @@ h3 {
 #cat-modal-content, #friend-modal-content{
     width: 50%;
     margin: 20px auto;
-    height: 400px !important;
+    padding-bottom: 20px;
+    height: auto !important;
 }
 
 #modal-container-1 {
