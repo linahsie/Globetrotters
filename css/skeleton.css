@@ -530,6 +530,7 @@ h3 {
   width: 70px;
   height: 70px
 }
+
 #friend_summary_facebook{
   padding-left:10px;
   padding-right: 2px;
@@ -780,6 +781,11 @@ h3 {
 .modal-content {
     height: 90vh;
     margin: 20px;
+}
+
+#cat-modal-content {
+    height: 55vh !important;
+    
 }
 
 .post-modal-content {
