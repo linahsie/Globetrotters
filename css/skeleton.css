@@ -451,6 +451,10 @@ h3 {
     background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
 }
 
+#instagram_bar{
+    background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+}
+
 #facebook_search_bar {
   background-color: #3B5998;
   /*background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);*/
@@ -473,7 +477,8 @@ h3 {
     z-index: -1;
 }
 
-#instagram_logo_container{
+.instagram_logo_container{
+    padding-top:10px;
     padding-bottom: 10px;
     display: inline-block;
     text-align: center;
@@ -485,7 +490,7 @@ h3 {
   text-align: center;
 }
 
-#instagram_text_logo{
+.instagram_text_logo{
     width: 35%;
     z-index: 10;
 }
@@ -495,7 +500,7 @@ h3 {
   z-index: 10;
 }
 
-#instagram_logo {
+.instagram_logo {
     width: 35px;
     margin-right: 5px;
 }
@@ -521,6 +526,10 @@ h3 {
   border-bottom: 2px solid #E8E9EA;
 }
 
+.big_friend_icon{
+  width: 70px;
+  height: 70px
+}
 #friend_summary_facebook{
   padding-left:10px;
   padding-right: 2px;
@@ -563,6 +572,12 @@ h3 {
     margin-left: 10px;
     margin-top: 5px;
     padding: 10px 20px !important;
+}
+
+.select_all_button {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px 20px !important;
 }
 
 .see_more_button_facebook {
@@ -788,9 +803,10 @@ h3 {
     float: none;
 }
 
-#cat-modal-content {
+#cat-modal-content, #friend-modal-content{
     width: 50%;
     margin: 20px auto;
+    overflow: scroll;
 }
 
 #modal-container-1 {
@@ -802,8 +818,7 @@ h3 {
 #modal-container-2 {
     float: left;
     width: 40%;
-    padding: 20px;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 #modal-container-3 {
@@ -813,7 +828,18 @@ h3 {
     border-left: 2px solid #e8e9ea
 }
 
-#cat-modal-container {
+#instagram_bar_content {
+  float: left;
+  width: 100%;
+  padding: 20px;
+  overflow: scroll;
+}
+
+.pin_modal_post{
+  width: inherit;
+}
+
+#cat-modal-container, #friend-modal-container {
 	padding-top: 30px;
 	padding-left: 20px;
 }

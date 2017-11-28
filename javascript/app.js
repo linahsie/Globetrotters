@@ -1,10 +1,13 @@
 // Variables
 var markers = [];
 var results = [];
-var owner = {'1648141780196322489_6419152996':'maurahong', "1648203274850261973_6419152996":"siettafe", "1648205996408348201_6419152996":"meetvirginiablog", "1648207492566790906_6419152996":"_meenz_", "1648142329398496137_6419152996":"morgan_lilian", "1648142964357440401_6419152996":"blairsheets", "1648143607554019750_6419152996":"iya_112","1648143875813406561_6419152996":"emilywilliams7207", "1648144910229243633_6419152996":"ihellodao", "1648145274085184512_6419152996":"soeunp88", "1648145728210784819_6419152996":"raque_l", "1648146078569424576_6419152996": "adinapreston","1648146491154638543_6419152996":"swisskissberner", "1648146859104337560_6419152996":"llpz44"};
+var owner = {'1648141780196322489_6419152996':'maurahong', "1648203274850261973_6419152996":"siettafe", "1648205996408348201_6419152996":"meetvirginiablog", "1648207492566790906_6419152996":"_meenz_", "1648142329398496137_6419152996":"morgan_lilian", "1648142964357440401_6419152996":"blairsheets", "1648143607554019750_6419152996":"iya_112","1648143875813406561_6419152996":"emilywilliams7207", "1648144910229243633_6419152996":"ihellodao", "1648145274085184512_6419152996":"soeunp88", "1648145728210784819_6419152996":"raque_l", "1648146078569424576_6419152996": "adinapreston","1648146491154638543_6419152996":"_meenz_", "1648146859104337560_6419152996":"llpz44"};
+var id = {'maurahong':'1648141780196322489_6419152996', "siettafe":"1648203274850261973_6419152996", "meetvirginiablog":"1648205996408348201_6419152996", "_meenz_":"1648207492566790906_6419152996", "morgan_lilian":"1648142329398496137_6419152996", "blairsheets":"1648142964357440401_6419152996", "iya_112":"1648143607554019750_6419152996","emilywilliams7207":"1648143875813406561_6419152996", "ihellodao":"1648144910229243633_6419152996","soeunp88": "1648145274085184512_6419152996", "raque_l":"1648145728210784819_6419152996",  "adinapreston":"1648146078569424576_6419152996","_meenz_":"1648146491154638543_6419152996", "llpz44":"1648146859104337560_6419152996"};
+var friend_loc = {'_meenz_':1, 'ihellodao':3, 'llpz44':5, 'iya_112':7, 'raque_l':9, 'maurahong':11, 'siettafe':13, 'meetvirginiablog':15, 'morgan_lilian':17, 'blairsheets':19};
+
 var map;
 var geocoder;
-var initializedPostsUser = false;
+var friend_filter = {};
 
 var icon_base = 'assets/categories/';
 var icons = {
@@ -56,8 +59,10 @@ var locations = {
 		pic1: "https://media1.fdncms.com/stranger/imager/u/large/25014514/13895078_1273269562684182_2405888235649214765_n.jpg",
 		pic2: "https://s3-media1.fl.yelpcdn.com/bphoto/U9Qx1zpJvHKtS5NN51m0iQ/348s.jpg",
 		pic3: "http://www.yahglobal.com/images/business/details/biscuit-bitch-seattle.jpg",
-		pic4: "https://2.bp.blogspot.com/-SsXMr6-zHs4/VECE_xiTShI/AAAAAAAAY2U/6dlHOvEWVd4/s1600/101714maaf-biscuitbitchcaffelieto03.jpg"
-    },
+		pic4: "https://2.bp.blogspot.com/-SsXMr6-zHs4/VECE_xiTShI/AAAAAAAAY2U/6dlHOvEWVd4/s1600/101714maaf-biscuitbitchcaffelieto03.jpg",
+        post1:{name:'@ihellodao', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23596038_535015253504162_2704947171542695936_n.jpg'},
+		post2:{name:'@soeunp88', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507668_1530528950349631_1892949935985262592_n.jpg'}
+	},
     Seattle_Art_Museum: {
 		name: "Seattle Art Museum",
         address: "1300 1st Ave, Seattle, WA 98101",
@@ -68,7 +73,9 @@ var locations = {
 		pic1: "http://www.seattleartmuseum.org/Assets%20About%20SAM/hammering-man.jpg",
 		pic2: "http://kusama.site.seattleartmuseum.org/wp-content/uploads/sites/16/2017/03/HMSG_Kusama_LoveForever_01_RGB_1080px.jpg",
 		pic3: "http://www.seattleartmuseum.org/Assets%20About%20SAM/seattle-art-museum.jpg",
-		pic4: "http://mediad.publicbroadcasting.net/p/kuow/files/styles/medium/public/201601/SAM-cars6_0.jpg"
+		pic4: "http://mediad.publicbroadcasting.net/p/kuow/files/styles/medium/public/201601/SAM-cars6_0.jpg",
+        post1:{name:'@maurahong', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23507880_144325126192784_6753212568262672384_n.jpg'},
+		post2:{name:'@siettafe', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23596512_1751245091848190_6951484867284566016_n.jpg'}
     },
     The_Edgewater: {
 		name: "The Edgewater",
@@ -80,7 +87,9 @@ var locations = {
 		pic1: "http://www.theroamingboomers.com/wp-content/uploads/2011/07/Edgewater-Hotel-Seattle_588.jpg",
 		pic2: "http://www.edgewaterhotel.com/App_Data/MediaFiles/B/6/2/%7BB62DAF93-FF1B-46B6-8718-F6C0555F9EF7%7DTE_Lobby.jpg",
 		pic3: "https://images.trvl-media.com/hotels/1000000/20000/11200/11133/11133_149_z.jpg",
-		pic4: "https://cdn.wedding-spot.com/images/venues/3584/Edgewater-Hotel-Wedding-Seattle-WA-12_main.1431371856.png"
+		pic4: "https://cdn.wedding-spot.com/images/venues/3584/Edgewater-Hotel-Wedding-Seattle-WA-12_main.1431371856.png",
+        post1:{name:'@meetvirginiablog', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23507653_147224312698679_5423666048345833472_n.jpg'},
+		post2:{name:'@_meenz_', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23595931_145826546170506_1767955839231983616_n.jpg'}
     },
     The_Nest: {
 		name: "The Nest",
@@ -92,7 +101,9 @@ var locations = {
 		pic1: "https://thompsonprod.blob.core.windows.net/thompsonprod-container/2016/05/11135450/The_Nest.jpg",
 		pic2: "https://cdn.vox-cdn.com/thumbor/YCfyWVOFtAHWnZLGdXlR1ZdD80k=/0x600/cdn.vox-cdn.com/uploads/chorus_asset/file/6390175/015_-_Thompson_Seattle_The_Nest_Interior.0.jpg",
 		pic3: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg",
-		pic4: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg"
+		pic4: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg",
+		post1:{name:'@morgan_lilian', src:'http:////scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23594687_392373994514845_4782168981395996672_n.jpg'},
+		post2:{name:'@blairsheets', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498140_300574953763831_3738128870587498496_n.jpg'}
     },
     Volunteer_Park: {
 		name: "Volunteer Park",
@@ -104,7 +115,9 @@ var locations = {
 		pic1: "http://tanglewoodconservatories.com/wp-content/uploads/2014/05/volunteer_main.jpg",
 		pic2: "https://media1.fdncms.com/stranger/imager/u/original/24157597/shutterstock_103534460.jpg",
 		pic3: "https://www.theclio.com/web/ul/18759.36935.jpeg",
-		pic4: "https://amateurbotannist.files.wordpress.com/2011/07/25f09-img_1232.jpg"
+		pic4: "https://amateurbotannist.files.wordpress.com/2011/07/25f09-img_1232.jpg",
+        post1:{name:'@iya_112', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507504_186247568592045_918372219585822720_n.jpg'},
+		post2:{name:'@emilywilliams7207', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594583_137795413653072_7214794941241753600_n.jpg'}
     },
 	Palisade_Restaurant: {
 		name: "Palisade Restaurant",
@@ -116,20 +129,24 @@ var locations = {
 		pic1: "https://media-cdn.tripadvisor.com/media/photo-o/09/48/4b/b7/palisade.jpg",
 		pic2: "http://vp.cdn.cityvoterinc.com/GetImage.ashx?img=00/00/00/02/02/30/20230-2764220.jpg",
 		pic3: "https://img.grouponcdn.com/deal/nTYmBDEiS4h2HYMvUKthVT/Palisade_Food4-700x420/v1/c700x420.jpg",
-		pic4: "https://cdn.wedding-spot.com/images/venues/7485/Alani-Room-at-the-Palisade-Wedding-Seattle-WA-4_main.1453525170.jpg"
+		pic4: "https://cdn.wedding-spot.com/images/venues/7485/Alani-Room-at-the-Palisade-Wedding-Seattle-WA-4_main.1453525170.jpg",
+        post1:{name:'@raque_l', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507830_1801203963285244_8064666877747527680_n.jpg'},
+		post2:{name:'@adinapreston', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498728_196478230920947_30203498515660800_n.jpg'}
 	},
 	Pike_Place_Market: {
-		name: "Pike Place Market",
-		address: "Between Pike and Pine Sts. at First Ave., Seattle, WA 98101",
-		lat_lng: {lat: 0, lng: 0},
-		icon: icons.camera,
-		category: icons.cat_camera,
-		score: "assets/4.5 stars.png",
-		pic1: "http://pikeplacemarket.org/sites/default/files/styles/page_image/public/plan-your-visit-header.jpg?itok=tcl-zP7-",
-		pic2: "https://cdn.vox-cdn.com/thumbor/VjrdnIjF9QTw5qjGR1KKFfi1EPg=/0x0:2000x1329/1200x900/filters:focal(654x260:974x580)/cdn.vox-cdn.com/uploads/chorus_image/image/55235639/eatersea0916_pike_place_market_shutterstock_mcarter.0.0.jpg",
-		pic3: "http://image.boomsbeat.com/data/images/full/28734/1-jpg.jpg",
-		pic4: "http://digitalphotoacademy.com/wp-content/uploads/sites/17/2016/12/pike-place-market-19.jpg"
-	}
+        name: "Pike Place Market",
+        address: "Between Pike and Pine Sts. at First Ave., Seattle, WA 98101",
+        lat_lng: {lat: 0, lng: 0},
+        icon: icons.camera,
+        category: icons.cat_camera,
+        score: "assets/4.5 stars.png",
+        pic1: "http://pikeplacemarket.org/sites/default/files/styles/page_image/public/plan-your-visit-header.jpg?itok=tcl-zP7-",
+        pic2: "https://cdn.vox-cdn.com/thumbor/VjrdnIjF9QTw5qjGR1KKFfi1EPg=/0x0:2000x1329/1200x900/filters:focal(654x260:974x580)/cdn.vox-cdn.com/uploads/chorus_image/image/55235639/eatersea0916_pike_place_market_shutterstock_mcarter.0.0.jpg",
+        pic3: "http://image.boomsbeat.com/data/images/full/28734/1-jpg.jpg",
+        pic4: "http://digitalphotoacademy.com/wp-content/uploads/sites/17/2016/12/pike-place-market-19.jpg",
+        post1:{name:'@swisskissberner', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594798_1742576706049651_5308012169726525440_n.jpg'},
+		post2:{name:'@llpz44', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594478_130450257667702_5269201672713797632_n.jpg'}
+    }
 };
 var num_selected = 5;
 var category_selection = {
@@ -216,6 +233,7 @@ var categories = {
 	}
 };
 
+// instagram post related
 $( document ).ready(function () {
 
     // set up the Instagram api
@@ -230,10 +248,92 @@ $( document ).ready(function () {
     feed.run();
 });
 
+function filterFriend(target, friend_name) {
+
+    if (friend_name in id) {
+		if (id[friend_name] in friend_filter) {
+			target.style.filter = '';
+			if (friend_loc[friend_name] <= 9) {
+                var friend_icons = document.getElementById("friends_icon");
+                friend_icons.childNodes[friend_loc[friend_name]].style.filter = '';
+            }
+            friend_icons = document.getElementById("friends_icon2");
+            friend_icons.childNodes[friend_loc[friend_name]].style.filter  = '';
+			delete friend_filter[id[friend_name]];
+		}
+		else {
+			friend_filter[id[friend_name]] = true;
+			target.style.filter = 'drop-shadow(2px 2px 0 #644B7A) drop-shadow(-2px -2px 0  #644B7A) drop-shadow(-2px 2px 0  #644B7A) drop-shadow(2px -2px 0  #644B7A)';
+            if (friend_loc[friend_name] <= 9) {
+                var friend_icons = document.getElementById("friends_icon");
+                friend_icons.childNodes[friend_loc[friend_name]].style.filter = 'drop-shadow(2px 2px 0 #644B7A) drop-shadow(-2px -2px 0  #644B7A) drop-shadow(-2px 2px 0  #644B7A) drop-shadow(2px -2px 0  #644B7A)';
+            }
+            friend_icons = document.getElementById("friends_icon2");
+            friend_icons.childNodes[friend_loc[friend_name]].style.filter  = 'drop-shadow(2px 2px 0 #644B7A) drop-shadow(-2px -2px 0  #644B7A) drop-shadow(-2px 2px 0  #644B7A) drop-shadow(2px -2px 0  #644B7A)';
+		}
+	}
+
+    $('#instafeed').empty();
+    // set up the Instagram api
+    var feed = new Instafeed({
+        get: 'user',
+        tagName: 'awesome',
+        accessToken: '6419152996.166bd80.3f5e1392db904047832daf97129569e4',
+        userId:'6419152996',
+        template: '<div class="post"><p id ={{id}} class="owner"></p> <div onclick="changeStarColor(this)" class = "like_container"> <p id="star" > &#9733;</p> <p id="add" >Add to favorite</p> </div> <div class="post_content" onclick="open_post_modal(this)"> <div class="post_info"> <p>{{caption}}</p> <div id="comment_like"> <span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span></div> </div> <div> <img id ="post_image" src="{{image}}" alt="" class="img-responsive"> </div> </div> </div>',
+        resolution: 'standard_resolution',
+        filter: function(image){
+			return image.id in friend_filter
+		}
+    });
+    feed.run();
+
+}
+
+function filterFriendSelectAll(){
+    for (var key in id) {
+        if (!(id[key] in friend_filter)){
+            friend_filter[id[key]] = true;
+		}
+    }
+
+    var friend_icons = document.getElementById("friends_icon");
+    for (i = 0; i < friend_icons.childNodes.length/2-1; i++) {
+        friend_icons.childNodes[i*2+1].style.filter = 'drop-shadow(2px 2px 0 #644B7A) drop-shadow(-2px -2px 0  #644B7A) drop-shadow(-2px 2px 0  #644B7A) drop-shadow(2px -2px 0  #644B7A)';
+    }
+
+    friend_icons = document.getElementById("friends_icon2");
+    for (var i = 0; i < friend_icons.childNodes.length/2-1; i++) {
+        friend_icons.childNodes[i*2+1].style.filter = 'drop-shadow(2px 2px 0 #644B7A) drop-shadow(-2px -2px 0  #644B7A) drop-shadow(-2px 2px 0  #644B7A) drop-shadow(2px -2px 0  #644B7A)';
+    }
+
+    filterFriend(null, "");
+}
+
+function filterFriendUnselectAll(){
+    friend_filter = {};
+
+    var friend_icons = document.getElementById("friends_icon");
+    for (i = 0; i < friend_icons.childNodes.length/2-1; i++) {
+        friend_icons.childNodes[i*2+1].style.filter = '';
+    }
+
+    friend_icons = document.getElementById("friends_icon2");
+    for (var i = 0; i < friend_icons.childNodes.length/2-1; i++) {
+        friend_icons.childNodes[i*2+1].style.filter = '';
+    }
+
+    filterFriend(null, "");
+}
+
+function friendSeeMore(){
+	document.getElementById("friend_modal").style.display = "block";
+}
+
+function closeFriendModal(id){
+    document.getElementById(id).style.display = "none";
+}
 function initializePostsOwner() {
-    if (initializedPostsUser === true)
-        return;
-    initializedPostsUser = true;
     var posts = document.getElementsByClassName("owner");
     for (var i = 0; i < posts.length; i++) {
         posts[i].innerHTML = "@" + owner[posts[i].id];
@@ -255,6 +355,7 @@ function changeStarColor(target){
         addFavorite.innerHTML="Favorited";
     }
 }
+
 
 function open_sidebar() {
     document.getElementById("map").style.marginLeft = "40%";
@@ -380,6 +481,10 @@ function addClickListener(marker) {
 				document.getElementById("pic2").src = loc.pic2;
 				document.getElementById("pic3").src = loc.pic3;
 				document.getElementById("pic4").src = loc.pic4;
+                document.getElementById("post_pic1").src = loc.post1.src;
+                document.getElementById("post_pic2").src = loc.post2.src;
+                document.getElementById("post_owner1").innerHTML = loc.post1.name;
+                document.getElementById("post_owner2").innerHTML = loc.post2.name;
 				break;
 			}
 		}

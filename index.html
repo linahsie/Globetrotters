@@ -37,13 +37,13 @@
     <button id="sidebar_button" onclick="close_sidebar(event)">☰</button>
 
     <!-- sidebar div -->
-    <div id="sidebar">
+    <div onmouseover="initializePostsOwner()"  id="sidebar">
         <div id="search_bar">
             <input id="search" class="controls" type="text" placeholder="Search.." onchange="updateView(this.value)">
 
-            <div id="instagram_logo_container">
-                <img id="instagram_logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IgogICAgIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIKICAgICB2aWV3Qm94PSIwIDAgMjYgMjYiCiAgICAgc3R5bGU9IjtmaWxsOiNmZmZmZmY7IgogICAgIGNsYXNzPSJpY29uIGljb25zOC1pbnN0YWdyYW0iPjxnIGlkPSJzdXJmYWNlMSI+PHBhdGggc3R5bGU9IiAiIGQ9Ik0gNy41NDY4NzUgMCBDIDMuMzkwNjI1IDAgMCAzLjM5MDYyNSAwIDcuNTQ2ODc1IEwgMCAxOC40NTMxMjUgQyAwIDIyLjYwOTM3NSAzLjM5MDYyNSAyNiA3LjU0Njg3NSAyNiBMIDE4LjQ1MzEyNSAyNiBDIDIyLjYwOTM3NSAyNiAyNiAyMi42MDkzNzUgMjYgMTguNDUzMTI1IEwgMjYgNy41NDY4NzUgQyAyNiAzLjM5MDYyNSAyMi42MDkzNzUgMCAxOC40NTMxMjUgMCBaIE0gNy41NDY4NzUgMiBMIDE4LjQ1MzEyNSAyIEMgMjEuNTI3MzQ0IDIgMjQgNC40Njg3NSAyNCA3LjU0Njg3NSBMIDI0IDE4LjQ1MzEyNSBDIDI0IDIxLjUyNzM0NCAyMS41MzEyNSAyNCAxOC40NTMxMjUgMjQgTCA3LjU0Njg3NSAyNCBDIDQuNDcyNjU2IDI0IDIgMjEuNTMxMjUgMiAxOC40NTMxMjUgTCAyIDcuNTQ2ODc1IEMgMiA0LjQ3MjY1NiA0LjQ2ODc1IDIgNy41NDY4NzUgMiBaIE0gMjAuNSA0IEMgMTkuNjcxODc1IDQgMTkgNC42NzE4NzUgMTkgNS41IEMgMTkgNi4zMjgxMjUgMTkuNjcxODc1IDcgMjAuNSA3IEMgMjEuMzI4MTI1IDcgMjIgNi4zMjgxMjUgMjIgNS41IEMgMjIgNC42NzE4NzUgMjEuMzI4MTI1IDQgMjAuNSA0IFogTSAxMyA2IEMgOS4xNDQ1MzEgNiA2IDkuMTQ0NTMxIDYgMTMgQyA2IDE2Ljg1NTQ2OSA5LjE0NDUzMSAyMCAxMyAyMCBDIDE2Ljg1NTQ2OSAyMCAyMCAxNi44NTU0NjkgMjAgMTMgQyAyMCA5LjE0NDUzMSAxNi44NTU0NjkgNiAxMyA2IFogTSAxMyA4IEMgMTUuNzczNDM4IDggMTggMTAuMjI2NTYzIDE4IDEzIEMgMTggMTUuNzczNDM4IDE1Ljc3MzQzOCAxOCAxMyAxOCBDIDEwLjIyNjU2MyAxOCA4IDE1Ljc3MzQzOCA4IDEzIEMgOCAxMC4yMjY1NjMgMTAuMjI2NTYzIDggMTMgOCBaICI+PC9wYXRoPjwvZz48L3N2Zz4=" alt="Instagram logo">
-                <img src="assets/instagram_logo.png" id="instagram_text_logo" alt="Instagram text logo">
+            <div class="instagram_logo_container">
+                <img class="instagram_logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IgogICAgIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIKICAgICB2aWV3Qm94PSIwIDAgMjYgMjYiCiAgICAgc3R5bGU9IjtmaWxsOiNmZmZmZmY7IgogICAgIGNsYXNzPSJpY29uIGljb25zOC1pbnN0YWdyYW0iPjxnIGlkPSJzdXJmYWNlMSI+PHBhdGggc3R5bGU9IiAiIGQ9Ik0gNy41NDY4NzUgMCBDIDMuMzkwNjI1IDAgMCAzLjM5MDYyNSAwIDcuNTQ2ODc1IEwgMCAxOC40NTMxMjUgQyAwIDIyLjYwOTM3NSAzLjM5MDYyNSAyNiA3LjU0Njg3NSAyNiBMIDE4LjQ1MzEyNSAyNiBDIDIyLjYwOTM3NSAyNiAyNiAyMi42MDkzNzUgMjYgMTguNDUzMTI1IEwgMjYgNy41NDY4NzUgQyAyNiAzLjM5MDYyNSAyMi42MDkzNzUgMCAxOC40NTMxMjUgMCBaIE0gNy41NDY4NzUgMiBMIDE4LjQ1MzEyNSAyIEMgMjEuNTI3MzQ0IDIgMjQgNC40Njg3NSAyNCA3LjU0Njg3NSBMIDI0IDE4LjQ1MzEyNSBDIDI0IDIxLjUyNzM0NCAyMS41MzEyNSAyNCAxOC40NTMxMjUgMjQgTCA3LjU0Njg3NSAyNCBDIDQuNDcyNjU2IDI0IDIgMjEuNTMxMjUgMiAxOC40NTMxMjUgTCAyIDcuNTQ2ODc1IEMgMiA0LjQ3MjY1NiA0LjQ2ODc1IDIgNy41NDY4NzUgMiBaIE0gMjAuNSA0IEMgMTkuNjcxODc1IDQgMTkgNC42NzE4NzUgMTkgNS41IEMgMTkgNi4zMjgxMjUgMTkuNjcxODc1IDcgMjAuNSA3IEMgMjEuMzI4MTI1IDcgMjIgNi4zMjgxMjUgMjIgNS41IEMgMjIgNC42NzE4NzUgMjEuMzI4MTI1IDQgMjAuNSA0IFogTSAxMyA2IEMgOS4xNDQ1MzEgNiA2IDkuMTQ0NTMxIDYgMTMgQyA2IDE2Ljg1NTQ2OSA5LjE0NDUzMSAyMCAxMyAyMCBDIDE2Ljg1NTQ2OSAyMCAyMCAxNi44NTU0NjkgMjAgMTMgQyAyMCA5LjE0NDUzMSAxNi44NTU0NjkgNiAxMyA2IFogTSAxMyA4IEMgMTUuNzczNDM4IDggMTggMTAuMjI2NTYzIDE4IDEzIEMgMTggMTUuNzczNDM4IDE1Ljc3MzQzOCAxOCAxMyAxOCBDIDEwLjIyNjU2MyAxOCA4IDE1Ljc3MzQzOCA4IDEzIEMgOCAxMC4yMjY1NjMgMTAuMjI2NTYzIDggMTMgOCBaICI+PC9wYXRoPjwvZz48L3N2Zz4=" alt="Instagram logo">
+                <img src="assets/instagram_logo.png" class="instagram_text_logo" alt="Instagram text logo">
             </div>
         </div>
 
@@ -53,14 +53,14 @@
 
         <div id="friend_summary">
             <h3 style="color:#8a3ab9">Your Community</h3>
-            <div>
-                <img src="assets/users/person1.png" style="max-width: 50px; max-height: 50px">
-                <img src="assets/users/person2.png" style="max-width: 50px; max-height: 50px">
-                <img src="assets/users/person3.png" style="max-width: 50px; max-height: 50px">
-                <img src="assets/users/person4.png" style="max-width: 50px; max-height: 50px">
-                <img src="assets/users/person5.png" style="max-width: 50px; max-height: 50px">
+            <div id ="friends_icon">
+                <img src="assets/users/person1.png" style="max-width: 50px; max-height: 50px" onclick="filterFriend(this, '_meenz_')" >
+                <img src="assets/users/person2.png" style="max-width: 50px; max-height: 50px" onclick="filterFriend(this, 'ihellodao')" >
+                <img src="assets/users/person3.png" style="max-width: 50px; max-height: 50px" onclick="filterFriend(this, 'llpz44')" >
+                <img src="assets/users/person4.png" style="max-width: 50px; max-height: 50px" onclick="filterFriend(this, 'iya_112')" >
+                <img src="assets/users/person5.png" style="max-width: 50px; max-height: 50px" onclick="filterFriend(this, 'raque_l')" >
             </div>
-            <button class="see_more_button">See more</button>
+            <button class="see_more_button" onclick="friendSeeMore()">See more</button>
             <button class="see_more_button"><img src="assets/filter.png" class="img_in_button">Filter</button>
         </div>
         
@@ -81,7 +81,7 @@
         <div id="post_content">
             <h3 style="color:#8a3ab9">Posts</h3>
 
-            <div onmouseover="initializePostsOwner()" id="content">
+            <div id="content">
                 <div class="post_container">
                     <div id="instafeed"> </div>
                 </div>
@@ -116,7 +116,32 @@
             <p style="display:table-caption;caption-side:bottom;" class="post_caption" id = "post_caption" align="center" ></p>
         </div>
     </div>
-    
+
+    <!-- friend modal -->
+    <div id="friend_modal" class="modal">
+        <div class="modal-content" id="friend-modal-content">
+            <button class="close_modal" onclick="closeFriendModal('friend_modal')">close</button>
+            <div id="friend-modal-container">
+                <h3 id="friend-error">Choose friends' posts you want to see.</h3>
+                <h2>Your Friends</h2>
+                <div id ="friends_icon2">
+                    <img class="big_friend_icon" src="assets/users/person1.png" onclick="filterFriend(this, '_meenz_')" >
+                    <img class="big_friend_icon" src="assets/users/person2.png" onclick="filterFriend(this, 'ihellodao')" >
+                    <img class="big_friend_icon" src="assets/users/person3.png" onclick="filterFriend(this, 'llpz44')" >
+                    <img class="big_friend_icon" src="assets/users/person4.png" onclick="filterFriend(this, 'iya_112')" >
+                    <img class="big_friend_icon" src="assets/users/person5.png" onclick="filterFriend(this, 'raque_l')" >
+                    <img class="big_friend_icon" src="assets/users/person6.png" onclick="filterFriend(this, 'maurahong')" >
+                    <img class="big_friend_icon" src="assets/users/person7.png" onclick="filterFriend(this, 'siettafe')" >
+                    <img class="big_friend_icon" src="assets/users/person8.png" onclick="filterFriend(this, 'meetvirginiablog')" >
+                    <img class="big_friend_icon" src="assets/users/person9.png" onclick="filterFriend(this, 'morgan_lilian')" >
+                    <img class="big_friend_icon" src="assets/users/person10.png" onclick="filterFriend(this, 'blairsheets')" >
+                </div>
+            </div>
+            <button class="select_all_button" onclick="filterFriendSelectAll()">Select All</button>
+            <button class="select_all_button" onclick="filterFriendUnselectAll()">Unselect All</button>
+        </div>
+    </div>
+
     <!-- categories modal -->
 	<div id="cat_modal" class="modal">
 		<div class="modal-content" id="cat-modal-content">
@@ -146,7 +171,19 @@
                 <p id="location_address">Location address</p>
             </div>
             <div id="modal-container-2">
-                hello
+                <div id="instagram_bar">
+                    <div class="instagram_logo_container">
+                        <img class="instagram_logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IgogICAgIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIKICAgICB2aWV3Qm94PSIwIDAgMjYgMjYiCiAgICAgc3R5bGU9IjtmaWxsOiNmZmZmZmY7IgogICAgIGNsYXNzPSJpY29uIGljb25zOC1pbnN0YWdyYW0iPjxnIGlkPSJzdXJmYWNlMSI+PHBhdGggc3R5bGU9IiAiIGQ9Ik0gNy41NDY4NzUgMCBDIDMuMzkwNjI1IDAgMCAzLjM5MDYyNSAwIDcuNTQ2ODc1IEwgMCAxOC40NTMxMjUgQyAwIDIyLjYwOTM3NSAzLjM5MDYyNSAyNiA3LjU0Njg3NSAyNiBMIDE4LjQ1MzEyNSAyNiBDIDIyLjYwOTM3NSAyNiAyNiAyMi42MDkzNzUgMjYgMTguNDUzMTI1IEwgMjYgNy41NDY4NzUgQyAyNiAzLjM5MDYyNSAyMi42MDkzNzUgMCAxOC40NTMxMjUgMCBaIE0gNy41NDY4NzUgMiBMIDE4LjQ1MzEyNSAyIEMgMjEuNTI3MzQ0IDIgMjQgNC40Njg3NSAyNCA3LjU0Njg3NSBMIDI0IDE4LjQ1MzEyNSBDIDI0IDIxLjUyNzM0NCAyMS41MzEyNSAyNCAxOC40NTMxMjUgMjQgTCA3LjU0Njg3NSAyNCBDIDQuNDcyNjU2IDI0IDIgMjEuNTMxMjUgMiAxOC40NTMxMjUgTCAyIDcuNTQ2ODc1IEMgMiA0LjQ3MjY1NiA0LjQ2ODc1IDIgNy41NDY4NzUgMiBaIE0gMjAuNSA0IEMgMTkuNjcxODc1IDQgMTkgNC42NzE4NzUgMTkgNS41IEMgMTkgNi4zMjgxMjUgMTkuNjcxODc1IDcgMjAuNSA3IEMgMjEuMzI4MTI1IDcgMjIgNi4zMjgxMjUgMjIgNS41IEMgMjIgNC42NzE4NzUgMjEuMzI4MTI1IDQgMjAuNSA0IFogTSAxMyA2IEMgOS4xNDQ1MzEgNiA2IDkuMTQ0NTMxIDYgMTMgQyA2IDE2Ljg1NTQ2OSA5LjE0NDUzMSAyMCAxMyAyMCBDIDE2Ljg1NTQ2OSAyMCAyMCAxNi44NTU0NjkgMjAgMTMgQyAyMCA5LjE0NDUzMSAxNi44NTU0NjkgNiAxMyA2IFogTSAxMyA4IEMgMTUuNzczNDM4IDggMTggMTAuMjI2NTYzIDE4IDEzIEMgMTggMTUuNzczNDM4IDE1Ljc3MzQzOCAxOCAxMyAxOCBDIDEwLjIyNjU2MyAxOCA4IDE1Ljc3MzQzOCA4IDEzIEMgOCAxMC4yMjY1NjMgMTAuMjI2NTYzIDggMTMgOCBaICI+PC9wYXRoPjwvZz48L3N2Zz4=" alt="Instagram logo">
+                        <img src="assets/instagram_logo.png" class="instagram_text_logo" alt="Instagram text logo">
+                    </div>
+                </div>
+                <div id="instagram_bar_content">
+                    <h3>Posts</h3>
+                    <h5 id="post_owner1" >@abc</h5>
+                    <img id="post_pic1" class="pin_modal_post">
+                    <h5 id="post_owner2" >@cde</h5>
+                    <img id="post_pic2" class="pin_modal_post">
+                </div>
             </div>
             <div id="modal-container-3">
 				<img src="https://developer-tripadvisor.s3.amazonaws.com/uploads/tripadvisor-horz-rgb_newcolor_(1)_(1).svg" alt="TripAdvisor logo" id="tripadvisor-logo">
