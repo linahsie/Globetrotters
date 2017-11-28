@@ -48,6 +48,8 @@ var icons = {
 	cat_tickets_gray: icon_base + 'tickets_gray.png',
 	cat_camera_gray: icon_base + 'camera_gray.png'
 };
+
+
 var locations = {
     Biscuit_Bitch: {
 		name: "Biscuit Bitch",
