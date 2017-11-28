@@ -252,7 +252,7 @@ $( document ).ready(function () {
 });
 
 function filterFriend(target, friend_name) {
-    changeCategory("all", "cat_all");
+    changeCategorySelectAll();
     if (friend_name in id_dict) {
 		if (id_dict[friend_name] in friend_filter) {
 			target.style.filter = '';
@@ -280,8 +280,26 @@ function filterFriend(target, friend_name) {
 
 }
 
+function changeCategorySelectAll() {
+    document.getElementById("cat_all").src = icons.cat_all;
+    document.getElementById("cat1").src = categories[1].icon;
+    document.getElementById("cat2").src = categories[2].icon;
+    document.getElementById("cat3").src = categories[3].icon;
+    document.getElementById("cat4").src = categories[4].icon;
+    document.getElementById("cat5").src = categories[5].icon;
+
+    markers.forEach(removeMarkers);
+	for (var key in locations) {
+		var loc = locations[key];
+		if (loc.icon == categories[1].pin || loc.icon == categories[2].pin || loc.icon == categories[3].pin || loc.icon == categories[4].pin || loc.icon == categories[5].pin) {
+			addMarker(loc);
+		}
+	}
+	document.getElementById("cat_all").src = icons.cat_all_selected;
+}
+
 function filterFriendSelectAll(){
-    changeCategory("all", "cat_all");
+    changeCategorySelectAll();
     for (var key in id_dict) {
         if (!(id_dict[key] in friend_filter)){
             friend_filter[id_dict[key]] = true;
@@ -631,7 +649,7 @@ function closeCatModal(id) {
 				count++;
 			}
 		}
-		changeCategory('all', 'cat_all');
+        changeCategorySelectAll();
 	} else {
 		document.getElementById("cat-error").style.color = "red";
 		document.getElementById("cat-error").innerHTML = "Choose 5 categories.";
