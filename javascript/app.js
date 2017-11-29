@@ -107,7 +107,7 @@ var locations = {
 		hours: "24 hrs"
     },
     The_Nest: {
-		name: "The Nest",
+		name: "The Nest at Thompson Seattle",
         address: "110 Stewart St, Seattle, WA 98101",
         lat_lng: {lat: 0, lng: 0},
         icon: icons.bar,
@@ -116,7 +116,7 @@ var locations = {
 		pic1: "https://thompsonprod.blob.core.windows.net/thompsonprod-container/2016/05/11135450/The_Nest.jpg",
 		pic2: "https://cdn.vox-cdn.com/thumbor/YCfyWVOFtAHWnZLGdXlR1ZdD80k=/0x600/cdn.vox-cdn.com/uploads/chorus_asset/file/6390175/015_-_Thompson_Seattle_The_Nest_Interior.0.jpg",
 		pic3: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg",
-		pic4: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg",
+		pic4: "https://cdn.wedding-spot.com/images/venues/8960/Thompson-Seattle-Wedding-Seattle-WA-12_main.1477001833.jpg",
 		post1:{name:'morgan_lilian', src:'http:////scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23594687_392373994514845_4782168981395996672_n.jpg'},
 		post2:{name:'blairsheets', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498140_300574953763831_3738128870587498496_n.jpg'},
 		website: "http://www.thompsonhotels.com/hotels/seattle/thompson-seattle/restaurant-bars/the-nest",

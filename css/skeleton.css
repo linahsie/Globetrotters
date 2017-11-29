@@ -833,11 +833,15 @@ h3 {
 	width: 50%;
 	height: 50%;
 	overflow: hidden;
-	display: block;
 }
 
-.pictures img {
-
+#pic1, #pic2, #pic3, #pic4 {
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 120%;
+    max-height: 120%;
+	width: auto;
+	height: auto;
 }
 
 #instagram_bar_content {
