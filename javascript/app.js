@@ -68,7 +68,13 @@ var locations = {
 		website: "http://biscuitbitch.com",
 		phone: "(206) 728 - 2219",
 		price: "$",
-		hours: "7:00 AM - 2:00 PM"
+		hours: "7:00 AM - 2:00 PM",
+		user1: "AplrilFNP",
+		user2: "CHerieTanya",
+		review1: "I got here right at 9am on Sunday morning and already lined up. Fast service though. Food was very good. Sat at outside table. Many tourist and locals. Be prepared to wait and find somewhere else to enjoy the food. Very little seating space.",
+		review2: "We drove to Seattle from Vancouver BC with these biscuits in mind. Having been here once before, we needed a fix. We were not disappointed. The staff is also a delight.",
+		review1_score: "assets/4 star review.png",
+		review2_score: "assets/5 star review.png"
 	},
     Seattle_Art_Museum: {
 		name: "Seattle Art Museum",
@@ -86,7 +92,13 @@ var locations = {
 		website: "http://www.seattleartmuseum.org",
 		phone: "1 (206) 654-3100",
 		price: "N/A",
-		hours: "10:00 AM - 5:00 PM"
+		hours: "10:00 AM - 5:00 PM",
+		user1: "suzannetoliver",
+		user2: "radicalBMXer",
+		review1: "The Andrew Wyeth exhibit is particularly interesting. Although unfamiliar with his work until today, am now a great admirer! Multiple items / galleries are also of great interest: the porcelain gallery, the African collection, and European works. Highly recommend.",
+		review2: "A rather underwhelming art museum. We visit art museums all over the world, and this one does not stand out. It is not bad, but the collection seems rather scattered.",
+		review1_score: "assets/5 star review.png",
+		review2_score: "assets/1 star review.png"
     },
     The_Edgewater: {
 		name: "The Edgewater",
@@ -104,7 +116,13 @@ var locations = {
 		website: "http://www.edgewaterhotel.com/?utm_source=TripAdvisorBL&utm_medium=listing&utm_campaign=TripABL",
 		phone: "(830) 541 - 7800",
 		price: "$$$",
-		hours: "24 hrs"
+		hours: "24 hrs",
+		user1: "daveg",
+		user2: "michael4",
+		review1: "Great place on the water. The restaurant was right on the water for a great view while eating. The staff was excellent, very friendly and helpful. Grrat location within easy walking distance to all the downtown activities",
+		review2: "My wife and I stayed for two days for our 29th anniversary and couldn't have had a better time or service. I would recommend this to anyone looking for a place to stay in Seattle, WA. for a special time.",
+		review1_score: "assets/4 star review.png",
+		review2_score: "assets/5 star review.png"
     },
     The_Nest: {
 		name: "The Nest at Thompson Seattle",
@@ -122,7 +140,13 @@ var locations = {
 		website: "http://www.thompsonhotels.com/hotels/seattle/thompson-seattle/restaurant-bars/the-nest",
 		phone: "(206) 623 - 4600",
 		price: "$$$$",
-		hours: "5:00 PM - 12:00 AM"
+		hours: "5:00 PM - 12:00 AM",
+		user1: "pugetTom",
+		user2: "charlotte3",
+		review1: "Amazing view! This is a great spot for a drink after work, or before dinner. We tried to get in after dinner and it was so crowded we could not find a place to stand, much less sit.",
+		review2: "We were meeting people up there for drinks but when we exited the elevator we were asked if we had a reservation, for drinks!? Then we had to get our hand stamped!!! Why?Apparently, there are people who pay $50 to reserve a couch there. Well, we took in the views but there was absolutely no place to sit or even stand comfortably so we left. Views are spectacular though! Just a bit too pretentious! People who sit there think they are cool just because they spend $ on being able to sit on a couch for a bit, in our opinion they just seem silly and not cool at all :-)",
+		review1_score: "assets/5 star review.png",
+		review2_score: "assets/3 star review.png"
     },
     Volunteer_Park: {
 		name: "Volunteer Park",
@@ -140,7 +164,13 @@ var locations = {
 		website: "http://www.seattle.gov/parks/find/parks/volunteer-park",
 		phone: "(206) 684 - 4075",
 		price: "Free",
-		hours: "6:00 AM - 10:00 PM"
+		hours: "6:00 AM - 10:00 PM",
+		user1: "taha_mb",
+		user2: "linda_c:",
+		review1: "I walked alone in this park in an afternoon. It was calm and relaxing. It might not satisfy tourists, because while it is quite beautiful and relaxing, it is not a very special place",
+		review2: "Go to Volunteer Park and pack a lunch. It's really a nice park with a great museum and a relaxing place to have a picnic. Plus, getting there you get to see some pretty amazing homes in the area!",
+		review1_score: "assets/4 star review.png",
+		review2_score: "assets/5 star review.png"
     },
 	Palisade_Restaurant: {
 		name: "Palisade Restaurant",
@@ -158,7 +188,13 @@ var locations = {
 		website: "https://palisaderestaurant.com",
 		phone: "(206) 285 - 1000",
 		price: "$$$$",
-		hours: "11:30 AM - 10:00 PM"
+		hours: "11:30 AM - 10:00 PM",
+		user1: "jeanh",
+		user2: "psamob",
+		review1: "Oh my! Where to begin. Firstly great service, great location, great view and brilliant ambience from the minute you arrive. But let's get to the food which is the most important part of a dining experience. Every single course our group ordered was impeccable. Presentation? First class. Flavours? First class. Every course was superb. We loved the attention from our servers. Every attention was made to every single detail. Everything was delicious. I can't wait to return and I will never forget our first night here. Fantastic!",
+		review2: "This fine seafood restaurant is located in a beautiful surrounding where you see sailboats galore and great views of Elliott Bay. We had a relaxed seafood dinner with superb food. The service was impeccable. We sat and visited for quite some time while partaking of our dinner and never felt rushed, despite the restaurant's being full. This is a great establishment.",
+		review1_score: "assets/5 star review.png",
+		review2_score: "assets/5 star review.png"
 	},
 	Pike_Place_Market: {
         name: "Pike Place Market",
@@ -176,7 +212,13 @@ var locations = {
 		website: "http://pikeplacemarket.org",
 		phone: "(206) 682 - 7453",
 		price: "Free",
-		hours: "6:00 AM - 1:30 AM"
+		hours: "6:00 AM - 1:30 AM",
+		user1: "danielleh",
+		user2: "issacB",
+		review1: "Always have to stop and visit the Pike Place Market when I’m in Seattle! It’s such a staple in the downtown area and culture. So many fun things to see and local artisan treasures to find.",
+		review2: "Got to visit after over 15 years and the same atmosphere continues! Very nice place to visit and see things, even if you are not buying a Salmon or crab. Nice place to walk through on your way to the piers.",
+		review1_score: "assets/5 star review.png",
+		review2_score: "assets/5 star review.png"
     }
 };
 var num_selected = 5;
@@ -528,6 +570,12 @@ function addClickListener(marker) {
 				document.getElementById("hours").innerHTML = loc.hours;
 				document.getElementById("website").href = loc.website;
 				document.getElementById("phone").innerHTML = loc.phone;
+				document.getElementById("user1").innerHTML = loc.user1;
+				document.getElementById("user2").innerHTML = loc.user2;
+				document.getElementById("review1").innerHTML = loc.review1;
+				document.getElementById("review2").innerHTML = loc.review2;
+				document.getElementById("review1_score").src = loc.review1_score;
+				document.getElementById("review2_score").src = loc.review2_score;
 				break;
 			}
 		}
