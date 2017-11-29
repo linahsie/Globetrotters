@@ -64,7 +64,11 @@ var locations = {
 		pic3: "http://www.yahglobal.com/images/business/details/biscuit-bitch-seattle.jpg",
 		pic4: "https://2.bp.blogspot.com/-SsXMr6-zHs4/VECE_xiTShI/AAAAAAAAY2U/6dlHOvEWVd4/s1600/101714maaf-biscuitbitchcaffelieto03.jpg",
         post1:{name:'ihellodao', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23596038_535015253504162_2704947171542695936_n.jpg'},
-		post2:{name:'soeunp88', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507668_1530528950349631_1892949935985262592_n.jpg'}
+		post2:{name:'soeunp88', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507668_1530528950349631_1892949935985262592_n.jpg'},
+		website: "http://biscuitbitch.com",
+		phone: "(206) 728 - 2219",
+		price: "$",
+		hours: "7:00 AM - 2:00 PM"
 	},
     Seattle_Art_Museum: {
 		name: "Seattle Art Museum",
@@ -78,7 +82,11 @@ var locations = {
 		pic3: "http://www.seattleartmuseum.org/Assets%20About%20SAM/seattle-art-museum.jpg",
 		pic4: "http://mediad.publicbroadcasting.net/p/kuow/files/styles/medium/public/201601/SAM-cars6_0.jpg",
         post1:{name:'maurahong', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23507880_144325126192784_6753212568262672384_n.jpg'},
-		post2:{name:'siettafe', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23596512_1751245091848190_6951484867284566016_n.jpg'}
+		post2:{name:'siettafe', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23596512_1751245091848190_6951484867284566016_n.jpg'},
+		website: "http://www.seattleartmuseum.org",
+		phone: "1 (206) 654-3100",
+		price: "N/A",
+		hours: "10:00 AM - 5:00 PM"
     },
     The_Edgewater: {
 		name: "The Edgewater",
@@ -92,7 +100,11 @@ var locations = {
 		pic3: "https://images.trvl-media.com/hotels/1000000/20000/11200/11133/11133_149_z.jpg",
 		pic4: "https://cdn.wedding-spot.com/images/venues/3584/Edgewater-Hotel-Wedding-Seattle-WA-12_main.1431371856.png",
         post1:{name:'meetvirginiablog', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23507653_147224312698679_5423666048345833472_n.jpg'},
-		post2:{name:'_meenz_', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23595931_145826546170506_1767955839231983616_n.jpg'}
+		post2:{name:'_meenz_', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23595931_145826546170506_1767955839231983616_n.jpg'},
+		website: "http://www.edgewaterhotel.com/?utm_source=TripAdvisorBL&utm_medium=listing&utm_campaign=TripABL",
+		phone: "(830) 541 - 7800",
+		price: "$$$",
+		hours: "24 hrs"
     },
     The_Nest: {
 		name: "The Nest",
@@ -106,7 +118,11 @@ var locations = {
 		pic3: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg",
 		pic4: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg",
 		post1:{name:'morgan_lilian', src:'http:////scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23594687_392373994514845_4782168981395996672_n.jpg'},
-		post2:{name:'blairsheets', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498140_300574953763831_3738128870587498496_n.jpg'}
+		post2:{name:'blairsheets', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498140_300574953763831_3738128870587498496_n.jpg'},
+		website: "http://www.thompsonhotels.com/hotels/seattle/thompson-seattle/restaurant-bars/the-nest",
+		phone: "(206) 623 - 4600",
+		price: "$$$$",
+		hours: "5:00 PM - 12:00 AM"
     },
     Volunteer_Park: {
 		name: "Volunteer Park",
@@ -120,7 +136,11 @@ var locations = {
 		pic3: "https://www.theclio.com/web/ul/18759.36935.jpeg",
 		pic4: "https://amateurbotannist.files.wordpress.com/2011/07/25f09-img_1232.jpg",
         post1:{name:'iya_112', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507504_186247568592045_918372219585822720_n.jpg'},
-		post2:{name:'emilywilliams7207', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594583_137795413653072_7214794941241753600_n.jpg'}
+		post2:{name:'emilywilliams7207', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594583_137795413653072_7214794941241753600_n.jpg'},
+		website: "http://www.seattle.gov/parks/find/parks/volunteer-park",
+		phone: "(206) 684 - 4075",
+		price: "Free",
+		hours: "6:00 AM - 10:00 PM"
     },
 	Palisade_Restaurant: {
 		name: "Palisade Restaurant",
@@ -134,7 +154,11 @@ var locations = {
 		pic3: "https://img.grouponcdn.com/deal/nTYmBDEiS4h2HYMvUKthVT/Palisade_Food4-700x420/v1/c700x420.jpg",
 		pic4: "https://cdn.wedding-spot.com/images/venues/7485/Alani-Room-at-the-Palisade-Wedding-Seattle-WA-4_main.1453525170.jpg",
         post1:{name:'raque_l', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507830_1801203963285244_8064666877747527680_n.jpg'},
-		post2:{name:'adinapreston', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498728_196478230920947_30203498515660800_n.jpg'}
+		post2:{name:'adinapreston', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498728_196478230920947_30203498515660800_n.jpg'},
+		website: "https://palisaderestaurant.com",
+		phone: "(206) 285 - 1000",
+		price: "$$$$",
+		hours: "11:30 AM - 10:00 PM"
 	},
 	Pike_Place_Market: {
         name: "Pike Place Market",
@@ -148,7 +172,11 @@ var locations = {
         pic3: "http://image.boomsbeat.com/data/images/full/28734/1-jpg.jpg",
         pic4: "http://digitalphotoacademy.com/wp-content/uploads/sites/17/2016/12/pike-place-market-19.jpg",
         post1:{name:'swisskissberner', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594798_1742576706049651_5308012169726525440_n.jpg'},
-		post2:{name:'llpz44', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594478_130450257667702_5269201672713797632_n.jpg'}
+		post2:{name:'llpz44', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594478_130450257667702_5269201672713797632_n.jpg'},
+		website: "http://pikeplacemarket.org",
+		phone: "(206) 682 - 7453",
+		price: "Free",
+		hours: "6:00 AM - 1:30 AM"
     }
 };
 var num_selected = 5;
@@ -297,6 +325,8 @@ function changeCategorySelectAll() {
 		}
 	}
 	document.getElementById("cat_all").src = icons.cat_all_selected;
+	
+	markers.forEach(addClickListener);
 }
 
 function filterFriendSelectAll(){
@@ -494,6 +524,10 @@ function addClickListener(marker) {
                 document.getElementById("post_pic2").src = loc.post2.src;
                 document.getElementById("post_owner1").innerHTML = loc.post1.name;
                 document.getElementById("post_owner2").innerHTML = loc.post2.name;
+				document.getElementById("price").innerHTML = loc.price;
+				document.getElementById("hours").innerHTML = loc.hours;
+				document.getElementById("website").href = loc.website;
+				document.getElementById("phone").innerHTML = loc.phone;
 				break;
 			}
 		}
