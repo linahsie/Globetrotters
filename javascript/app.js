@@ -394,13 +394,17 @@ function changeCategorySelectAll() {
 	document.getElementById("cat5").title = categories[5].title;
 
     markers.forEach(removeMarkers);
-    for (var key in locations) {
-        var loc = locations[key];
-        if (loc.icon == categories[1].pin || loc.icon == categories[2].pin || loc.icon == categories[3].pin || loc.icon == categories[4].pin || loc.icon == categories[5].pin) {
-            addMarker(loc);
-        }
-    }
-    document.getElementById("cat_all").src = icons.cat_all_selected;
+	for(var i = 1; i <= 5; i++) {
+		categories[i].selected = false;
+	}
+	for(var key in locations) {
+		var loc = locations[key];
+		if(loc.icon == categories[1].pin || loc.icon == categories[2].pin || loc.icon == categories[3].pin || loc.icon == categories[4].pin || loc.icon == categories[5].pin) {
+			addMarker(loc);
+		}
+	}
+	updatePost();
+	document.getElementById(id).src = icons.cat_all_selected;
 
     markers.forEach(addClickListener);
 }
@@ -648,17 +652,15 @@ function changeCategory(category, id) { //("all", "cat_all")
 	document.getElementById("cat5").title = categories[5].title;
 
     markers.forEach(removeMarkers);
-	for(var key in locations) {
-		var loc = locations[key];
-		if(loc.icon == category.pin) {
-			if(category.selected) {
-				category.selected = false;
-			} else {
-				category.selected = true;
-			}
-		}
+	if(category.selected) {
+		category.selected = false;
+	} else {
+		category.selected = true;
 	}
     if(category == 'all') {
+		for(var i = 1; i <= 5; i++) {
+			categories[i].selected = false;
+		}
         for(var key in locations) {
             var loc = locations[key];
             if(loc.icon == categories[1].pin || loc.icon == categories[2].pin || loc.icon == categories[3].pin || loc.icon == categories[4].pin || loc.icon == categories[5].pin) {
