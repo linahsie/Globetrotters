@@ -892,6 +892,33 @@ h3 {
   }
 }
 
+#instagram_bar_content h3{
+  float: left;
+}
+
+#instagram_bar_content h4{
+  margin-left: 5px;
+  float: right;
+  color: gray;
+}
+
+#instagram_bar_content h5{
+  float: left;
+  font-size: 20px;
+}
+
+.new_line_float{
+  clear: both;
+  float: left;
+}
+
+#trending_icon{
+  float:right;
+  height: 20px;
+  margin-top: 10px;
+}
+
+
 .icons8-facebook {
   display: inline-block;
   width: 45px;
