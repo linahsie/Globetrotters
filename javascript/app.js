@@ -286,34 +286,44 @@ var category_selection = {
 };
 var categories = {
     1: {
+		id: "cat1",
         icon: icons.cat_restaurant,
         icon_selected: icons.cat_restaurant_selected,
         pin: icons.restaurant,
-		title: "Restaurants"
+		title: "Restaurants",
+		selected: false
     },
     2: {
+		id: "cat2",
         icon: icons.cat_bar,
         icon_selected: icons.cat_bar_selected,
         pin: icons.bar,
-		title: "Bars"
+		title: "Bars",
+		selected: false
     },
     3: {
+		id: "cat3",
         icon: icons.cat_camera,
         icon_selected: icons.cat_camera_selected,
         pin: icons.camera,
-		title: "Points of Interest"
+		title: "Points of Interest",
+		selected: false
     },
     4: {
+		id: "cat4",
         icon: icons.cat_tickets,
         icon_selected: icons.cat_tickets_selected,
         pin: icons.tickets,
-		title: "Attractions"
+		title: "Attractions",
+		selected: false
     },
     5: {
+		id: "cat5",
         icon: icons.cat_oak,
         icon_selected: icons.cat_oak_selected,
         pin: icons.oak,
-		title: "Parks"
+		title: "Parks",
+		selected: false
     }
 };
 
@@ -629,6 +639,16 @@ function changeCategory(category, id) { //("all", "cat_all")
 	document.getElementById("cat5").title = categories[5].title;
 
     markers.forEach(removeMarkers);
+	for(var key in locations) {
+		var loc = locations[key];
+		if(loc.icon == category.pin) {
+			if(category.selected) {
+				category.selected = false;
+			} else {
+				category.selected = true;
+			}
+		}
+	}
     if(category == 'all') {
         for(var key in locations) {
             var loc = locations[key];
@@ -639,16 +659,18 @@ function changeCategory(category, id) { //("all", "cat_all")
         updatePost();
         document.getElementById(id).src = icons.cat_all_selected;
     } else {
-        for(var key in locations) {
-            var loc = locations[key];
-            if(loc.icon == category.pin) {
-                addMarker(loc);
-                category_filter = {};
-                category_filter[id_dict[loc['post1']['name']]] = true;
-                category_filter[id_dict[loc['post2']['name']]] = true;
-            }
-        }
-        document.getElementById(id).src = category.icon_selected;
+		for(var i = 1; i <= 5; i++) {
+			for(var key in locations) {
+				var loc = locations[key];
+				if(loc.icon == categories[i].pin && categories[i].selected) {
+					addMarker(loc);
+					category_filter = {};
+					category_filter[id_dict[loc['post1']['name']]] = true;
+					category_filter[id_dict[loc['post2']['name']]] = true;
+					document.getElementById(categories[i].id).src = categories[i].icon_selected;
+				}
+			}
+		}
     }
     markers.forEach(addClickListener);
 
