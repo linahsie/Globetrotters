@@ -63,7 +63,7 @@ var locations = {
         pic2: "https://s3-media1.fl.yelpcdn.com/bphoto/U9Qx1zpJvHKtS5NN51m0iQ/348s.jpg",
         pic3: "http://www.yahglobal.com/images/business/details/biscuit-bitch-seattle.jpg",
         pic4: "https://2.bp.blogspot.com/-SsXMr6-zHs4/VECE_xiTShI/AAAAAAAAY2U/6dlHOvEWVd4/s1600/101714maaf-biscuitbitchcaffelieto03.jpg",
-        friendsStats: "31",
+        friendsStats: "2",
         post1:{name:'ihellodao', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23596038_535015253504162_2704947171542695936_n.jpg'},
         post2:{name:'soeunp88', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507668_1530528950349631_1892949935985262592_n.jpg'},
         website: "http://biscuitbitch.com",
@@ -88,7 +88,7 @@ var locations = {
         pic2: "http://kusama.site.seattleartmuseum.org/wp-content/uploads/sites/16/2017/03/HMSG_Kusama_LoveForever_01_RGB_1080px.jpg",
         pic3: "http://www.seattleartmuseum.org/Assets%20About%20SAM/seattle-art-museum.jpg",
         pic4: "http://mediad.publicbroadcasting.net/p/kuow/files/styles/medium/public/201601/SAM-cars6_0.jpg",
-        friendsStats: "12",
+        friendsStats: "2",
         post1:{name:'maurahong', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23507880_144325126192784_6753212568262672384_n.jpg'},
         post2:{name:'siettafe', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23596512_1751245091848190_6951484867284566016_n.jpg'},
         website: "http://www.seattleartmuseum.org",
@@ -113,7 +113,7 @@ var locations = {
         pic2: "http://www.edgewaterhotel.com/App_Data/MediaFiles/B/6/2/%7BB62DAF93-FF1B-46B6-8718-F6C0555F9EF7%7DTE_Lobby.jpg",
         pic3: "https://images.trvl-media.com/hotels/1000000/20000/11200/11133/11133_149_z.jpg",
         pic4: "https://cdn.wedding-spot.com/images/venues/3584/Edgewater-Hotel-Wedding-Seattle-WA-12_main.1431371856.png",
-        friendsStats: "3",
+        friendsStats: "2",
         post1:{name:'meetvirginiablog', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23507653_147224312698679_5423666048345833472_n.jpg'},
         post2:{name:'_meenz_', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23595931_145826546170506_1767955839231983616_n.jpg'},
         website: "http://www.edgewaterhotel.com/?utm_source=TripAdvisorBL&utm_medium=listing&utm_campaign=TripABL",
@@ -138,7 +138,7 @@ var locations = {
         pic2: "https://cdn.vox-cdn.com/thumbor/YCfyWVOFtAHWnZLGdXlR1ZdD80k=/0x600/cdn.vox-cdn.com/uploads/chorus_asset/file/6390175/015_-_Thompson_Seattle_The_Nest_Interior.0.jpg",
         pic3: "https://s3-media4.fl.yelpcdn.com/bphoto/HETDGdYn7P6IdMkm6vhQXA/o.jpg",
         pic4: "https://cdn.wedding-spot.com/images/venues/8960/Thompson-Seattle-Wedding-Seattle-WA-12_main.1477001833.jpg",
-        friendsStats: "6",
+        friendsStats: "2",
         post1:{name:'morgan_lilian', src:'http:////scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23594687_392373994514845_4782168981395996672_n.jpg'},
         post2:{name:'blairsheets', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498140_300574953763831_3738128870587498496_n.jpg'},
         website: "http://www.thompsonhotels.com/hotels/seattle/thompson-seattle/restaurant-bars/the-nest",
@@ -163,7 +163,7 @@ var locations = {
         pic2: "https://media1.fdncms.com/stranger/imager/u/original/24157597/shutterstock_103534460.jpg",
         pic3: "https://www.theclio.com/web/ul/18759.36935.jpeg",
         pic4: "https://amateurbotannist.files.wordpress.com/2011/07/25f09-img_1232.jpg",
-        friendsStats: "18",
+        friendsStats: "2",
         post1:{name:'iya_112', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507504_186247568592045_918372219585822720_n.jpg'},
         post2:{name:'emilywilliams7207', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594583_137795413653072_7214794941241753600_n.jpg'},
         website: "http://www.seattle.gov/parks/find/parks/volunteer-park",
@@ -188,7 +188,7 @@ var locations = {
         pic2: "http://vp.cdn.cityvoterinc.com/GetImage.ashx?img=00/00/00/02/02/30/20230-2764220.jpg",
         pic3: "https://img.grouponcdn.com/deal/nTYmBDEiS4h2HYMvUKthVT/Palisade_Food4-700x420/v1/c700x420.jpg",
         pic4: "https://cdn.wedding-spot.com/images/venues/7485/Alani-Room-at-the-Palisade-Wedding-Seattle-WA-4_main.1453525170.jpg",
-        friendsStats: "5",
+        friendsStats: "2",
         post1:{name:'raque_l', src:'http://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/23507830_1801203963285244_8064666877747527680_n.jpg'},
         post2:{name:'adinapreston', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23498728_196478230920947_30203498515660800_n.jpg'},
         website: "https://palisaderestaurant.com",
@@ -213,7 +213,7 @@ var locations = {
         pic2: "https://cdn.vox-cdn.com/thumbor/VjrdnIjF9QTw5qjGR1KKFfi1EPg=/0x0:2000x1329/1200x900/filters:focal(654x260:974x580)/cdn.vox-cdn.com/uploads/chorus_image/image/55235639/eatersea0916_pike_place_market_shutterstock_mcarter.0.0.jpg",
         pic3: "http://image.boomsbeat.com/data/images/full/28734/1-jpg.jpg",
         pic4: "http://digitalphotoacademy.com/wp-content/uploads/sites/17/2016/12/pike-place-market-19.jpg",
-        friendsStats: "24",
+        friendsStats: "2",
         post1:{name:'swisskissberner', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594798_1742576706049651_5308012169726525440_n.jpg'},
         post2:{name:'llpz44', src:'http://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23594478_130450257667702_5269201672713797632_n.jpg'},
         website: "http://pikeplacemarket.org",
@@ -596,15 +596,7 @@ function addClickListener(marker) {
                 document.getElementById("pic2").src = loc.pic2;
                 document.getElementById("pic3").src = loc.pic3;
                 document.getElementById("pic4").src = loc.pic4;
-                document.getElementById("location_friends_stats").innerHTML = " " + loc.friendsStats + " friends have been here";
-                if (loc.friendsStats > 20) {
-                    document.getElementById("trending_icon").src = "images/fire.png";
-                    document.getElementById("trending_note").innerHTML = "Trending!";
-                }
-                else{
-                    document.getElementById("trending_icon").src = null;
-                    document.getElementById("trending_note").innerHTML = "";
-                }
+                document.getElementById("location_friends_stats").innerHTML = loc.friendsStats + " friends have been here";
                 document.getElementById("post_pic1").src = loc.post1.src;
                 document.getElementById("post_pic2").src = loc.post2.src;
                 document.getElementById("post_owner1").innerHTML = "@" + loc.post1.name;
