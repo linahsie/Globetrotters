@@ -404,7 +404,7 @@ function changeCategorySelectAll() {
 		}
 	}
 	updatePost();
-	document.getElementById(id).src = icons.cat_all_selected;
+	document.getElementById("cat_all").src = icons.cat_all_selected;
 
     markers.forEach(addClickListener);
 }
