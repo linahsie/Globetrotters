@@ -231,7 +231,7 @@ var category_selection = {
         icon_gray: icons.cat_restaurant_gray,
         icon_selected: icons.cat_restaurant_selected,
         pin: icons.restaurant,
-		title: "Restaurant"
+		title: "Restaurants"
     },
     bar: {
         id: "sel_bar",
@@ -241,7 +241,7 @@ var category_selection = {
         icon_gray: icons.cat_bar_gray,
         icon_selected: icons.cat_bar_selected,
         pin: icons.bar,
-		title: "Bar"
+		title: "Bars"
     },
     camera: {
         id: "sel_cam",
@@ -251,7 +251,7 @@ var category_selection = {
         icon_gray: icons.cat_camera_gray,
         icon_selected: icons.cat_camera_selected,
         pin: icons.camera,
-		title: "Camera"
+		title: "Points of Interest"
     },
     tickets: {
         id: "sel_tic",
@@ -289,19 +289,19 @@ var categories = {
         icon: icons.cat_restaurant,
         icon_selected: icons.cat_restaurant_selected,
         pin: icons.restaurant,
-		title: "Restaurant"
+		title: "Restaurants"
     },
     2: {
         icon: icons.cat_bar,
         icon_selected: icons.cat_bar_selected,
         pin: icons.bar,
-		title: "Bar"
+		title: "Bars"
     },
     3: {
         icon: icons.cat_camera,
         icon_selected: icons.cat_camera_selected,
         pin: icons.camera,
-		title: "Camera"
+		title: "Points of Interest"
     },
     4: {
         icon: icons.cat_tickets,
