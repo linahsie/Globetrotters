@@ -230,7 +230,8 @@ var category_selection = {
         icon_check: icons.cat_restaurant_check,
         icon_gray: icons.cat_restaurant_gray,
         icon_selected: icons.cat_restaurant_selected,
-        pin: icons.restaurant
+        pin: icons.restaurant,
+		title: "Restaurant"
     },
     bar: {
         id: "sel_bar",
@@ -239,7 +240,8 @@ var category_selection = {
         icon_check: icons.cat_bar_check,
         icon_gray: icons.cat_bar_gray,
         icon_selected: icons.cat_bar_selected,
-        pin: icons.bar
+        pin: icons.bar,
+		title: "Bar"
     },
     camera: {
         id: "sel_cam",
@@ -248,7 +250,8 @@ var category_selection = {
         icon_check: icons.cat_camera_check,
         icon_gray: icons.cat_camera_gray,
         icon_selected: icons.cat_camera_selected,
-        pin: icons.camera
+        pin: icons.camera,
+		title: "Camera"
     },
     tickets: {
         id: "sel_tic",
@@ -257,7 +260,8 @@ var category_selection = {
         icon_check: icons.cat_tickets_check,
         icon_gray: icons.cat_tickets_gray,
         icon_selected: icons.cat_tickets_selected,
-        pin: icons.tickets
+        pin: icons.tickets,
+		title: "Attractions"
     },
     oak: {
         id: "sel_oak",
@@ -266,7 +270,8 @@ var category_selection = {
         icon_check: icons.cat_oak_check,
         icon_gray: icons.cat_oak_gray,
         icon_selected: icons.cat_oak_selected,
-        pin: icons.oak
+        pin: icons.oak,
+		title: "Parks"
     },
     hotel: {
         id: "sel_hot",
@@ -275,34 +280,40 @@ var category_selection = {
         icon_check: icons.cat_hotel_check,
         icon_gray: icons.cat_hotel_gray,
         icon_selected: icons.cat_hotel_selected,
-        pin: icons.hotel
+        pin: icons.hotel,
+		title: "Hotels"
     }
 };
 var categories = {
     1: {
         icon: icons.cat_restaurant,
         icon_selected: icons.cat_restaurant_selected,
-        pin: icons.restaurant
+        pin: icons.restaurant,
+		title: "Restaurant"
     },
     2: {
         icon: icons.cat_bar,
         icon_selected: icons.cat_bar_selected,
-        pin: icons.bar
+        pin: icons.bar,
+		title: "Bar"
     },
     3: {
         icon: icons.cat_camera,
         icon_selected: icons.cat_camera_selected,
-        pin: icons.camera
+        pin: icons.camera,
+		title: "Camera"
     },
     4: {
         icon: icons.cat_tickets,
         icon_selected: icons.cat_tickets_selected,
-        pin: icons.tickets
+        pin: icons.tickets,
+		title: "Attractions"
     },
     5: {
         icon: icons.cat_oak,
         icon_selected: icons.cat_oak_selected,
-        pin: icons.oak
+        pin: icons.oak,
+		title: "Parks"
     }
 };
 
@@ -358,6 +369,12 @@ function changeCategorySelectAll() {
     document.getElementById("cat3").src = categories[3].icon;
     document.getElementById("cat4").src = categories[4].icon;
     document.getElementById("cat5").src = categories[5].icon;
+	
+	document.getElementById("cat1").title = categories[1].title;
+	document.getElementById("cat2").title = categories[2].title;
+	document.getElementById("cat3").title = categories[3].title;
+	document.getElementById("cat4").title = categories[4].title;
+	document.getElementById("cat5").title = categories[5].title;
 
     markers.forEach(removeMarkers);
     for (var key in locations) {
@@ -604,6 +621,12 @@ function changeCategory(category, id) { //("all", "cat_all")
     document.getElementById("cat3").src = categories[3].icon;
     document.getElementById("cat4").src = categories[4].icon;
     document.getElementById("cat5").src = categories[5].icon;
+	
+	document.getElementById("cat1").title = categories[1].title;
+	document.getElementById("cat2").title = categories[2].title;
+	document.getElementById("cat3").title = categories[3].title;
+	document.getElementById("cat4").title = categories[4].title;
+	document.getElementById("cat5").title = categories[5].title;
 
     markers.forEach(removeMarkers);
     if(category == 'all') {
@@ -732,6 +755,7 @@ function closeCatModal(id) {
                 categories[count].icon = cat.icon;
                 categories[count].icon_selected = cat.icon_selected;
                 categories[count].pin = cat.pin;
+				categories[count].title = cat.title;
                 count++;
             }
         }
