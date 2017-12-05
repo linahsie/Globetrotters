@@ -597,9 +597,14 @@ function addClickListener(marker) {
                 document.getElementById("pic3").src = loc.pic3;
                 document.getElementById("pic4").src = loc.pic4;
                 document.getElementById("location_friends_stats").innerHTML = " " + loc.friendsStats + " friends have been here";
-                document.getElementById("trending_note").innerHTML = "Trending!";
-                if (loc.friendsStats > 20)
+                if (loc.friendsStats > 20) {
                     document.getElementById("trending_icon").src = "images/fire.png";
+                    document.getElementById("trending_note").innerHTML = "Trending!";
+                }
+                else{
+                    document.getElementById("trending_icon").src = null;
+                    document.getElementById("trending_note").innerHTML = "";
+                }
                 document.getElementById("post_pic1").src = loc.post1.src;
                 document.getElementById("post_pic2").src = loc.post2.src;
                 document.getElementById("post_owner1").innerHTML = "@" + loc.post1.name;
